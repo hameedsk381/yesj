@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "chrome",
+            "name": "https://gitlab.com/servelots/renarration/renarration-api",
+            "request": "launch",
+            "url": "https://gitlab.com/servelots/renarration/renarration-api"
+        }
+    ]
+}

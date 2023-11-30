@@ -1,0 +1,41 @@
+/* App.css */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.grid-item {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.image-bounce {
+    border: 1px solid transparent;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.image-bounce:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+.divider{
+    width: 200px;
+   
+    height: 2px;
+    margin: auto;
+    margin-top: 20px;
+}

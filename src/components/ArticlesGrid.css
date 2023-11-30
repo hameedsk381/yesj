@@ -1,0 +1,40 @@
+
+.card{
+    display: flex;
+    width: 400px;
+    height: 250px;
+    padding: 20px;
+    border: 2px solid #bfbfbf;
+}
+.cardbody {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid with items of minimum 200px */
+    gap: 10px; /* Space between grid items */
+    padding-inline: 1rem;
+}
+
+/* Example media query for larger screens */
+@media (min-width: 768px) {
+    .cardbody {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Larger minimum size for larger screens */
+    }
+}
+
+/* You can add more media queries for different screen sizes if needed */
+
+.cardcontent{
+    display: flex;
+    flex-direction: column;
+}
+
+.cardcontent p{
+   font-size: 20px;
+   font-weight: 100;
+}
+
+a{
+    text-decoration: none;
+    font-size: 21px;
+    font-weight: 800;
+    color: #29af8c;
+}

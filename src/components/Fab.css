@@ -1,0 +1,31 @@
+/* FloatingActionButton.css */
+
+.fab-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .fab-button {
+
+    border-radius: 50%;
+    padding: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+  
+  /* Define the bounce animation */
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  /* Apply the bounce animation if the shouldBounce state is true */
+  .fab-container.bounce {
+    animation: bounce 0.3s infinite alternate;
+  }
+  

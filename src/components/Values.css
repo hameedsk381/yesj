@@ -1,0 +1,74 @@
+.container {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    gap: 20px;
+    padding: 10%;
+    background-color: #f4f4f4;
+  }
+  
+  .section {
+    padding: 15px;
+    margin: 10px;
+  }
+  
+  .header {
+    display: flex;
+    flex-direction: column; /* Stack icon and title on top of each other by default */
+    align-items: center; /* Center them */
+    text-align: center;
+  }
+  
+  .icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px; /* Space between icon and title on mobile */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  h2 {
+    margin: 0;
+  }
+  
+  p {
+    color: #666;
+  }
+  
+  a {
+    color: #00f;
+    text-decoration: none;
+    margin-top: 10px;
+  }
+  
+  /* Desktop styles */
+  @media (min-width: 768px) {
+    .header {
+      flex-direction: row; /* Set icon and title side by side on desktop */
+      align-items: center;
+      text-align: left;
+    }
+  
+    .icon {
+      margin-right: 10px; /* Space between icon and title on desktop */
+      margin-bottom: 0; /* Remove bottom margin on desktop */
+    }
+  
+    .section {
+      display: flex; /* To keep title and content aligned nicely */
+      flex-direction: column;
+    }
+  }
+  
+  /* Add additional responsive design styles as needed */
+  
+
+  .image-container{
+    display: flex;
+    flex-flow: column wrap;
+  }
+  .content-container{
+    display: flex;
+    flex-flow: column wrap;
+    width: fit-content;
+  }
