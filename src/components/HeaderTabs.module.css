@@ -2,7 +2,7 @@
     padding-top: var(--mantine-spacing-sm);
     background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
     border-bottom: rem(1px) solid light-dark(var(--mantine-color-gray-2), transparent);
-    /* position: fixed; */
+     position: sticky; 
     width: 100%;
 
   }
@@ -37,19 +37,19 @@
   }
   
   .tab {
-    font-weight: 500;
+    font-weight: 900;
     height: rem(38);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: transparent;
     position: relative;
     bottom: -1px;
-  
-    &:hover {
-      background-color: light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-5));
-    }
-  
+  margin-bottom: 10px;
+  &:hover {
+   
+    border-bottom: none;
+  }
     &[data-active] {
-      background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
-      border-color: light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-7));
+  color: red;
       border-bottom-color: transparent;
     }
   }

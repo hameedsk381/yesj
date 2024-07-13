@@ -11,20 +11,22 @@ import Carouselslider from '../components/Carouselslider'
 import About from '../components/About'
 import NewsLetter from '../components/NewsLetter'
 import Contact from '../components/Contact'
+import { SimpleGrid, Text, ThemeIcon, rem } from '@mantine/core'
+import { IconCircleDotted, IconFileCode, IconFlame, IconReceiptOff } from '@tabler/icons-react'
 // import CardsCarousel from '../components/Carousel'
 
 const Homepage = () => {
   return (
     <div>
      
-        {/* <Carouselslider/> */}
-    {/* <HeroBullets/> */}
-    {/* <AnimatedText/> */}
+        <Carouselslider/>
+ 
     <About/>
+   
     <NewsLetter/>
     <DonationBanner/>
+  
     
-      {/* <Footer /> */}
     </div>
   )
 }

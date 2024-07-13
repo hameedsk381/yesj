@@ -45,15 +45,7 @@ const Gallery = () => {
         </button>
       ))}
     </div>
-    <div className="gallery-container"> {/* This div wraps the gallery for max-width and centering */}
-      <div className="gallery">
-        {filteredImages.map((image, index) => (
-          <div key={index} className="gallery-item">
-            <Image src={image.src} alt={`Gallery item ${index}`}  />
-          </div>
-        ))}
-      </div>
-    </div>
+   
   </Container>
   );
 };

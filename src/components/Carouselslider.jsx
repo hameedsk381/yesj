@@ -2,10 +2,10 @@ import  { useState, useEffect } from 'react';
 import './Slider.css';
 
 const images = [
-    'https://source.unsplash.com/random/1',
-    'https://source.unsplash.com/random/2',
-    'https://source.unsplash.com/random/3',
-    'https://source.unsplash.com/random/4',
+    'https://picsum.photos/1200/1000',
+    'https://picsum.photos/1300/1000',
+    'https://picsum.photos/1500/1000',
+    'https://picsum.photos/1800/1000',
 ];
 
 function Carouselslider() {
@@ -20,11 +20,11 @@ function Carouselslider() {
     }, []);
 
     return (
-        <div className="slider">
+        <div className="slider" style={{margin:'auto'}}>
             {images.map((image, index) => (
                 <img
                     key={index}
-                    src={image}
+                    src={image} 
                     alt=""
                     className={index === current ? 'active' : ''}
                 />

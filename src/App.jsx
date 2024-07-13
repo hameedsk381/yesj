@@ -16,6 +16,7 @@ import OurMission from './components/OurMission';
 import Programmes from './components/Programmes';
 import Contact from './components/Contact';
 import Gallery from './components/Gallery';
+import CourseRegistrationForm from './components/CourseRegistrationForm';
 // ... other pages
 
 function App() {
@@ -25,14 +26,15 @@ function App() {
         <Header/>
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/home" element={<Homepage />} />
-          {/* <Route path="/ourmission" element={<OurMission />} /> */}
+      
+          <Route path="/ourmission" element={<OurMission />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path='*' element={<ErrorPage/>}/>
           <Route path='/ourmission' element={<OurMission/>}/>
           <Route path='/programmes' element={<Programmes/>}/>
           <Route path='/contactus' element={<Contact/>}/>
           <Route path='/mediagallery' element={<Gallery/>}/>
+
           {/* ... other routes */}
         </Routes>
         <Footer/>
