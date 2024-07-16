@@ -74,7 +74,7 @@ const ProgramList = () => {
       </div>
 
       {/* Newsletter Section */}
-      <div className="bg-gradient-to-r from-purple-500 to-indigo-600 py-16">
+      {/* <div className="bg-gradient-to-r from-purple-500 to-indigo-600 py-16">
         <div className="max-w-2xl mx-auto text-center px-4">
           <h2 className="text-3xl font-bold mb-6 text-white">Stay Updated</h2>
           <form className="space-y-4">
@@ -84,7 +84,7 @@ const ProgramList = () => {
             </button>
           </form>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

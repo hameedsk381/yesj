@@ -6,13 +6,13 @@ import ProgramList from './ProgramList'
 
 const Programmes = () => {
   return (
-    <>
+    <div className='h-72 bg-gradient-to-r from-purple-600  via-blue-600 to-purple-600'>
         
         <Container py={'5%'} size={'xl'}>
       <ProgramList/>
+      <NewsLetter/>
     </Container>
-   
-    </>
+    </div>
    
   )
 }
