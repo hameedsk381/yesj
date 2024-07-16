@@ -10,6 +10,8 @@
       var(--mantine-color-blue-7) 0%,
       var(--mantine-color-blue-7) 100%
     );
+    margin-bottom: 30px;
+    border-radius: 10px;
     @media (max-width: $mantine-breakpoint-sm) {
       flex-direction: column-reverse;
       padding: var(--mantine-spacing-xl);

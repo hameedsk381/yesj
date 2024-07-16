@@ -1,7 +1,7 @@
-import { Container, Title, Text, Button, Group } from '@mantine/core';
+import { Container, Title, Text, Group } from '@mantine/core';
 import classes from './errorpage.module.css';
 import { Illustration } from '../components/Illustration';
-import { Link } from 'react-router-dom';
+
 
 export default function ErrorPage() {
   return (
@@ -14,9 +14,12 @@ export default function ErrorPage() {
             Page you are trying to open does not exist. You may have mistyped the address, or the
             page has been moved to another URL. If you think this is an error contact support.
           </Text>
-          <Group justify="center">
-            <Link type='button' style={{textDecoration:"none"}} to={'home'} size="md">Take me back to home page</Link>
-          </Group>
+        
+           <Group justify='center'>
+           <a  href={'/'}>  Take me back to home page</a>
+           </Group>
+        
+          
         </div>
       </div>
     </Container>

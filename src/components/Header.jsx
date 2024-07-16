@@ -60,7 +60,7 @@ function Header() {
         <CourseRegistrationForm />
       </Modal>
 
-      <header className={classes.header}>
+      <header className={classes.header} >
         <Container className={classes.mainSection} size="xl">
           <Group justify="space-between">
           <Avatar src="YESJ_Logo_Black.png" alt="Yesj" radius={'xl'} size={'4rem'} />

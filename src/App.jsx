@@ -18,7 +18,7 @@ import Contact from './components/Contact';
 import Gallery from './components/Gallery';
 import CourseRegistrationForm from './components/CourseRegistrationForm';
 // ... other pages
-
+import 'leaflet/dist/leaflet.css';
 function App() {
   return (
     <Router>

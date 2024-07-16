@@ -2,10 +2,13 @@ import  { useState, useEffect } from 'react';
 import './Slider.css';
 
 const images = [
-    'https://picsum.photos/1200/1000',
-    'https://picsum.photos/1300/1000',
-    'https://picsum.photos/1500/1000',
-    'https://picsum.photos/1800/1000',
+    'https://yesj.org/assets/images/slider-01.jpg',
+    'https://yesj.org/assets/images/slider-2.jpg',
+    'https://yesj.org/assets/images/slider-3.jpg',
+    'https://yesj.org/assets/in-banners/banner-OurMission.jpg',
+    'https://yesj.org/assets/in-banners/banner-aboutus.jpg',
+    'https://yesj.org/assets/in-banners/banner-programmes.jpg'
+   
 ];
 
 function Carouselslider() {
@@ -14,7 +17,7 @@ function Carouselslider() {
     useEffect(() => {
         const autoplay = setInterval(() => {
             setCurrent((prev) => (prev + 1) % images.length);
-        }, 3000);  // Change slide every 3 seconds
+        }, 9000);  // Change slide every 3 seconds
 
         return () => clearInterval(autoplay);  // Cleanup the interval on component unmount
     }, []);

@@ -72,9 +72,9 @@ const CourseRegistrationForm = () => {
           <Grid.Col span={{ base: 12, md: 6, lg: 4 }}>
             <TextInput
               mt="sm"
-              label="Current Education"
-              placeholder="Your current education"
-              {...form.getInputProps('currentEducation')}
+              label="Course Appearing For"
+              placeholder="Course you are appearing for"
+              {...form.getInputProps('courseAppearingFor')}
             />
           </Grid.Col>
           <Grid.Col span={12}>
@@ -93,8 +93,18 @@ const CourseRegistrationForm = () => {
               </Group>
             </Radio.Group>
           </Grid.Col>
+          
           {form.values.isStudying === 'yes' && (
-            <Grid.Col span={{ base: 12, md: 6, lg: 4 }}>
+            <>
+             <Grid.Col span={{ base: 12, md: 6, lg: 4 }}>
+            <TextInput
+              mt="sm"
+              label="Current Education"
+              placeholder="Your current education"
+              {...form.getInputProps('currentEducation')}
+            />
+          </Grid.Col>
+          <Grid.Col span={{ base: 12, md: 6, lg: 4 }}>
               <TextInput
                 mt="sm"
                 label="Institution Name"
@@ -102,15 +112,10 @@ const CourseRegistrationForm = () => {
                 {...form.getInputProps('institutionName')}
               />
             </Grid.Col>
+            </>
+           
           )}
-          <Grid.Col span={{ base: 12, md: 6, lg: 4 }}>
-            <TextInput
-              mt="sm"
-              label="Course Appearing For"
-              placeholder="Course you are appearing for"
-              {...form.getInputProps('courseAppearingFor')}
-            />
-          </Grid.Col>
+         
           <Grid.Col span={12}>
             <Checkbox
               mt="sm"

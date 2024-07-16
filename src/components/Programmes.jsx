@@ -7,10 +7,10 @@ const Programmes = () => {
   return (
     <>
         
-        <Container py={'10%'} size={'xl'}>
+        <Container py={'5%'} size={'xl'}>
       <ProgramsGrid/>
     </Container>
-    <NewsLetter/>
+   
     </>
    
   )
