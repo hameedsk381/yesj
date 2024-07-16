@@ -1,5 +1,5 @@
 import {   Flex,  SimpleGrid } from '@mantine/core'
-import CustomSection from './CustomSection'
+import CustomSection from './Program'
 
 const OurMission = () => {
   return (

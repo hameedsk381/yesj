@@ -3,6 +3,8 @@ import { FaEnvelope, FaRegFileAlt, FaQuoteRight } from 'react-icons/fa';
 import EventDetails from './EventDetails';
 import { Link } from 'react-router-dom';
 import ProgramItemCard from './ProgramItemCard';
+import ProgramsGrid from './ProgramsGrid';
+import { Container } from '@mantine/core';
 
 const programsList = [
     {
@@ -61,15 +63,9 @@ const ProgramList = () => {
 
       {/* Event Cards */}
 
-      <div className="container mx-auto px-4 py-16">
-      
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {programsList.map((item) => (
-            <ProgramItemCard key={item.id} programCardDetails={item}/>
-        ))}
-
-        </div>
-      </div>
+ <Container size={'xl'} py={'5%'}  >
+ <ProgramsGrid/>
+ </Container>
 
       {/* Newsletter Section */}
       <div className="bg-gradient-to-r from-purple-500 to-indigo-600 py-16">

@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
-import CustomSection from './CustomSection';
+
+import Program from './Program';
 
 const programs = [
   {
@@ -83,12 +84,12 @@ const DynamicProgrammes = () => {
             ref={containerRef}
             className="flex overflow-x-hidden space-x-8 pb-4"
           >
-            {programs.map((item) => (
-              <CustomSection
+            {programs.map((item,index) => (
+              <Program
                 key={item.id}
                 title={item.title}
                 desc={item.description}
-                poster={item.imageUrl}
+                poster={item.imageUrl} eventnum={index + 1}
               />
             ))}
           </div>

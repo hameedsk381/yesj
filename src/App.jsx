@@ -11,7 +11,7 @@ import AboutUs from './pages/AboutUs';
 import ErrorPage from './pages/ErrorPage';
 import Login from './pages/Login';
 import { Container } from '@mantine/core';
-import CustomSection from './components/CustomSection';
+import CustomSection from './components/Program';
 import OurMission from './components/OurMission';
 import Programmes from './components/Programmes';
 import Contact from './components/Contact';
