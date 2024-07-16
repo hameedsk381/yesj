@@ -8,9 +8,9 @@ const Programmes = () => {
   return (
     <>
         
-        <Container py={'5%'} size={'xl'}>
-      <ProgramsGrid/>
-    </Container>
+     
+      <ProgramList/>
+    
    
     </>
    
