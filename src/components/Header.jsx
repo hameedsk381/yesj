@@ -7,7 +7,7 @@ import {
   Avatar,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { IconArrowRight} from '@tabler/icons-react';
+import { IconArrowRight } from '@tabler/icons-react';
 import classes from './HeaderTabs.module.css';
 import ProfileMenu from './ProfileMenu';
 import { Link, Outlet } from 'react-router-dom';
@@ -24,7 +24,7 @@ const tabs = [
   'Yesj Echos',
   'Media Gallery',
   'Contribute',
-  'Contact Us',
+ 
 ];
 
 function Header() {
@@ -60,32 +60,37 @@ function Header() {
         <CourseRegistrationForm />
       </Modal>
 
-      <header className={classes.header} >
+      <header className={classes.header}>
         <Container className={classes.mainSection} size="xl">
           <Group justify="space-between">
-          <Avatar src="YESJ_Logo_Black.png" alt="Yesj" radius={'xl'} size={'4rem'} />
             {/* {login ? <ProfileMenu /> : <Button onClick={open}>Login / Register</Button>} */}
             <nav>
-          <Container size="md">
-            <Tabs
-              defaultValue="Home"
-              variant="default"
-              visibleFrom="sm"
-              classNames={{
-                root: classes.tabs,
-                list: classes.tabsList,
-                tab: classes.tab,
-              }}
-            >
-              <Tabs.List>{items}</Tabs.List>
-            </Tabs>
-          </Container>
-        </nav>
-            <Button  rightSection={<IconArrowRight size={14} />} onClick={openCourseModal}>Register for a course</Button></Group>
-          
+              <Container size="md" >
+                <Tabs
+                  defaultValue="Home"
+                  variant="default"
+                  visibleFrom="sm"
+                  classNames={{
+                    root: classes.tabs,
+                    list: classes.tabsList,
+                    tab: classes.tab,
+                  }}
+                >
+                  <Tabs.List>{items}
+                 
+                  </Tabs.List>
+                </Tabs>
+              </Container>
+            </nav>
+            <Button rightSection={<IconArrowRight size={14} />} onClick={openCourseModal}>Register for a course</Button>
+          </Group>
         </Container>
-       
       </header>
+      
+      <div className={classes.avatarContainer}>
+        <Avatar src="YESJ_Logo_Black.png" alt="Yesj" radius="xl" size="5.5rem" />
+      </div>
+      
       <Outlet />
     </>
   );

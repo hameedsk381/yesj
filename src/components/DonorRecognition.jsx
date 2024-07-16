@@ -52,7 +52,7 @@ const DonorRecognition = () => {
         {/* Featured Donors */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredDonors.map((donor, index) => (
-            <div key={index} className="bg-gray-100 p-6 rounded-lg shadow-lg text-center">
+            <div key={index} className="bg-white p-6 rounded-lg shadow-lg text-center">
               <img src={donor.photo} alt={donor.name} className="w-24 h-24 object-cover rounded-full mx-auto mb-4" />
               <h3 className="text-xl font-semibold mb-2">{donor.name}</h3>
               <p className="text-gray-700 mb-4 italic">"{donor.quote}"</p>

@@ -4,15 +4,13 @@ import classes from './CardGradient.module.css';
 
 export default function CustomSection({title,desc,poster}) {
   return (
-    <Paper withBorder radius="md" className={classes.card} >
+    <Paper withBorder  radius="md" className={classes.card} >
   <Box>
   <img src={poster} alt="poster" style={{width:'75%'}}/>
-      <Text size="xl" fw={500} mt="md" ta={'center'}>
-        {title}
-      </Text>
-      <Text size="sm" mt="sm" c="dimmed">
+      <Text size="lg" fw={500} mt="md" ta={'center'}>
       {desc}
       </Text>
+     
 
   </Box>
     </Paper>

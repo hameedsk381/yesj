@@ -2,14 +2,16 @@
     padding-top: var(--mantine-spacing-sm);
     background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
     border-bottom: rem(1px) solid light-dark(var(--mantine-color-gray-2), transparent);
-    
+    position: relative;
+    z-index: 1;
     width: 100%;
-
+padding-left: 5%;
 
   }
   
   .mainSection {
-    padding-bottom: var(--mantine-spacing-sm);
+    padding: var(--mantine-spacing-xs);
+   
   }
   
   .user {
@@ -53,4 +55,17 @@
   color: red;
       border-bottom-color: transparent;
     }
+  }
+  .avatarContainer {
+    position: absolute;
+    top: 10px; /* Adjust as necessary to position the avatar correctly */
+
+    transform: translateX(-50%);
+    z-index: 2;
+
+   margin-left: 60px;
+   background-color: white;
+   border-radius: 100%;
+   padding: 0.5%;
+   
   }

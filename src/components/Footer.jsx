@@ -1,6 +1,7 @@
 import { Text, Container, ActionIcon, Group, rem } from '@mantine/core';
 import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons-react';
 import classes from './FooterLinks.module.css';
+import Contact from './Contact';
 
 const data = [
   {
@@ -56,17 +57,18 @@ function Footer() {
 
   return (
     <footer className={classes.footer}>
-      <Container className={classes.inner}>
+            <Contact/>
+      {/* <Container className={classes.inner}>
         <div className={classes.logo}>
           <Text size="xs" color="dimmed" className={classes.description}>
             Build fully functional accessible web applications faster than ever
           </Text>
         </div>
         <div className={classes.groups}>{groups}</div>
-      </Container>
+      </Container> */}
       <Container className={classes.afterFooter}>
         <Text color="dimmed" size="sm">
-          © 2020 mantine.dev. All rights reserved.
+          © 2024 YesJ. All rights reserved.
         </Text>
         <Group gap={0} className={classes.social} justify="flex-end" wrap="nowrap">
           <ActionIcon size="lg" color="gray" variant="subtle">

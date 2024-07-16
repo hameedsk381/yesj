@@ -46,7 +46,7 @@ const TestimonialCarousel = () => {
     <section className=" py-16">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-12">Testimonials</h2>
-        <div className="slider" style={{margin:'auto'}}>
+        <div className="flex gap-10" style={{margin:'auto'}}>
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
