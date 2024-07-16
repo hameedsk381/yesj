@@ -17,6 +17,7 @@ import Programmes from './components/Programmes';
 import Contact from './components/Contact';
 import Gallery from './components/Gallery';
 import CourseRegistrationForm from './components/CourseRegistrationForm';
+import EventDetails from './components/EventDetails';
 // ... other pages
 import 'leaflet/dist/leaflet.css';
 function App() {
@@ -34,7 +35,7 @@ function App() {
           <Route path='/programmes' element={<Programmes/>}/>
           <Route path='/contactus' element={<Contact/>}/>
           <Route path='/mediagallery' element={<Gallery/>}/>
-
+          <Route path="event/:id" element={<EventDetails />} />
           {/* ... other routes */}
         </Routes>
         <Footer/>
