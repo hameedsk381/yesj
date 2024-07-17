@@ -10,7 +10,7 @@ function EventItem(props) {
           {/* Event Details Page */}
           <div className="bg-white py-16 px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-4xl font-bold mb-8 text-center text-gray-800">{title}</h2>
+              <h2 className="text-4xl font-bold mb-8 text-center text-red-500">{title}</h2>
               <img src={imageUrl} alt="Event Detail" className="w-full h-96 object-cover rounded-xl mb-8" />
               <div className="space-y-6 text-gray-700">
                 <p className='text-center'>{description}</p>
@@ -19,10 +19,10 @@ function EventItem(props) {
           </div>
 
           {/* Stat Section */}
-          <div className="bg-gradient-to-r from-indigo-500 to-purple-600 py-16">
+          <div className="bg-pink-500 py-16">
             <div className="max-w-4xl mx-auto flex flex-row justify-around items-center">
               {stats.map((stat, statIndex) => (
-                <div key={statIndex} className="text-center px-4 py-6 flex flex-row flex-col">
+                <div key={statIndex} className="text-center px-4 py-6 flex lg:flex-row flex-col">
                   <h3 className="text-4xl font-bold text-white mb-2">{stat.count}</h3>
                   <p className="text-white text-xl">{stat.description}</p>
                 </div>
@@ -49,7 +49,7 @@ function EventItem(props) {
           </div>
 
           {/* Testimonial Section */}
-          <div className="bg-gradient-to-r from-indigo-100 to-purple-100 py-16 px-4">
+          <div className="bg-gradient-to-r from-red-100 to-blue-100 py-16 px-4">
             <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">What Our Participants Say</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {testimonials.map((testimonial, testimonialIndex) => (

@@ -5,6 +5,7 @@ import {
   Button,
   Modal,
   Avatar,
+  Burger,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconArrowRight } from '@tabler/icons-react';
@@ -32,7 +33,7 @@ function Header() {
   const [courseModalOpened, { open: openCourseModal, close: closeCourseModal }] = useDisclosure(false);
   const [login, setLogin] = useState(false);
   const [currentView, setCurrentView] = useState('login'); // or 'register'
-
+  const [menuOpened, setMenuOpened] = useState(false); // Hamburger menu state
   const showLogin = () => {
     setCurrentView('login');
   };
@@ -61,34 +62,53 @@ function Header() {
       </Modal>
 
       <header className={classes.header}>
-        <Container className={classes.mainSection} size="xl">
-          <Group justify="space-between">
-            {/* {login ? <ProfileMenu /> : <Button onClick={open}>Login / Register</Button>} */}
-            <nav>
-              <Container size="md" >
-                <Tabs
-                  defaultValue="Home"
-                  variant="default"
-                  visibleFrom="sm"
-                  classNames={{
-                    root: classes.tabs,
-                    list: classes.tabsList,
-                    tab: classes.tab,
-                  }}
-                >
-                  <Tabs.List>{items}
-                 
-                  </Tabs.List>
-                </Tabs>
-              </Container>
-            </nav>
-            <Button rightSection={<IconArrowRight size={14} />} onClick={openCourseModal}>Register for a course</Button>
-          </Group>
-        </Container>
+      <nav className='hidden md:flex justify-around py-2'>
+           
+           <Tabs
+             defaultValue="Home"
+             variant="default"
+        
+             classNames={{
+               root: classes.tabs,
+               list: classes.tabsList,
+               tab: classes.tab,
+             }}
+           >
+             <Tabs.List>{items}
+            
+             </Tabs.List>
+           </Tabs>
+         
+        
+         <Button  rightSection={<IconArrowRight size={14} />} onClick={openCourseModal}>Register for a course</Button>
+         {/* {login ? <ProfileMenu /> : <Button onClick={open}>Login / Register</Button>} */}
+        
+       </nav>
+       <div className=" flex md:hidden justify-between w-full pb-1 pr-3">
+       <Avatar src="YESJ_Logo_Black.png" alt="Yesj" radius="xl" size="3.5rem" />
+              <Burger opened={menuOpened} onClick={() => setMenuOpened((o) => !o)} />
+            </div>
+       {menuOpened && (
+          <nav className="md:hidden bg-white shadow-md absolute top-full left-0 w-full z-50">
+            <Tabs
+              defaultValue="Home"
+              variant="default"
+              classNames={{
+                root: classes.tabs,
+                list: classes.tabsList,
+                tab: classes.tab,
+              }}
+            >
+              <Tabs.List>{items}</Tabs.List>
+            </Tabs>
+          </nav>
+        )}
       </header>
       
+      <div className='hidden md:block'>
       <div className={classes.avatarContainer}>
         <Avatar src="YESJ_Logo_Black.png" alt="Yesj" radius="xl" size="5.5rem" />
+      </div>
       </div>
       
       <Outlet />

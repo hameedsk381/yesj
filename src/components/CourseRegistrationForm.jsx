@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from '@mantine/form';
 import { TextInput, NumberInput, Select, Checkbox, Button, Group, Box, Grid, Container, Title, Avatar, Radio } from '@mantine/core';
-
+import logo from '../assets/YESJ_Logo_Black.png'
 const CourseRegistrationForm = () => {
   const form = useForm({
     initialValues: {
@@ -32,7 +32,7 @@ const CourseRegistrationForm = () => {
 
   return (
     <Container>
-      <Avatar m="auto" mb={10} src="YESJ_Logo_Black.png" alt="Yesj" radius="xl" size="4rem" />
+      <Avatar m="auto" mb={10} src={logo} alt="Yesj" radius="xl" size="4rem" />
       <Title ta="center" mb={20} size="h1" style={{ fontSize: 'clamp(29px, 5vw, 42px)' }}>
         Course Registration Form
       </Title>
