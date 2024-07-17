@@ -3,6 +3,8 @@ import { FaEnvelope, FaRegFileAlt, FaQuoteRight } from 'react-icons/fa';
 import EventDetails from './EventDetails';
 import { Link } from 'react-router-dom';
 import ProgramItemCard from './ProgramItemCard';
+import ProgramsGrid from './ProgramsGrid';
+import { Container } from '@mantine/core';
 
 const programsList = [
     {
@@ -54,24 +56,16 @@ const ProgramList = () => {
   return (
     <div className="bg-gradient-to-r from-blue-50 to-indigo-50 min-h-screen">
       {/* Hero Section */}
-      <div className="relative w-full h-96">
-        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80" alt="Event" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center">
-          <h1 className="text-white text-5xl md:text-7xl font-bold tracking-wider">Welcome to Our Event</h1>
-        </div>
+      <div className="relative w-full h-[150px] lg:h-full">
+        <img src="https://yesj.org/assets/in-banners/banner-programmes.jpg" alt="Event" className="w-full h-full object-cover" />
+       
       </div>
 
       {/* Event Cards */}
 
-      <div className="container mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Upcoming Events</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {programsList.map((item) => (
-            <ProgramItemCard key={item.id} programCardDetails={item}/>
-        ))}
-
-        </div>
-      </div>
+ <Container size={'xl'} py={'5%'}  >
+ <ProgramsGrid/>
+ </Container>
 
       {/* Newsletter Section */}
       {/* <div className="bg-gradient-to-r from-purple-500 to-indigo-600 py-16">

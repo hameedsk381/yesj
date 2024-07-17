@@ -3,9 +3,10 @@
     cursor: pointer;
     overflow: hidden;
     transition: transform 150ms ease, box-shadow 100ms ease;
-    padding: var(--mantine-spacing-lg);
+    padding: var(--mantine-spacing-sm);
     padding-left: calc(var(--mantine-spacing-xl) * 1.5);
-  margin: var(--mantine-spacing-lg);
+    min-width : calc(var(--mantine-spacing-xl) * 9.5) ;
+  margin: var(--mantine-spacing-sm);
     @mixin hover {
       box-shadow: var(--mantine-shadow-lg);
       transform: scale(1.08);

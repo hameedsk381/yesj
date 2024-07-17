@@ -10,8 +10,7 @@ import Homepage from './pages/Homepage';
 import AboutUs from './pages/AboutUs';
 import ErrorPage from './pages/ErrorPage';
 import Login from './pages/Login';
-import { Container } from '@mantine/core';
-import CustomSection from './components/CustomSection';
+import { Modal, Button, Image } from '@mantine/core';
 import OurMission from './components/OurMission';
 import Programmes from './components/Programmes';
 import Contact from './components/Contact';
@@ -20,9 +19,42 @@ import CourseRegistrationForm from './components/CourseRegistrationForm';
 import EventDetails from './components/EventDetails';
 // ... other pages
 import 'leaflet/dist/leaflet.css';
+import { IconArrowRight } from '@tabler/icons-react';
+import { useDisclosure } from '@mantine/hooks';
+import { useEffect, useState } from 'react';
 function App() {
+  const [firstVisit, setFirstVisit] = useState(false);
+  const [courseModalOpened, { open: openCourseModal, close: closeCourseModal }] = useDisclosure(false);
+
+  useEffect(() => {
+    const visited = sessionStorage.getItem('visited');
+    if (!visited) {
+      setFirstVisit(true);
+      sessionStorage.setItem('visited', 'true');
+    }
+  }, []);
   return (
     <Router>
+       <Modal opened={firstVisit} onClose={() => setFirstVisit(false)} size="xl">
+        <div className="text-center">
+          <Image  src="yesj_activity.png" alt="Poster" />
+          <Button
+            rightSection={<IconArrowRight size={14} />}
+            onClick={() => {
+              setFirstVisit(false);
+              openCourseModal();
+            }}
+            className="mt-4"
+          >
+            Register for a course
+          </Button>
+        </div>
+      </Modal>
+
+      <Modal fullScreen opened={courseModalOpened} onClose={closeCourseModal}>
+        <CourseRegistrationForm />
+      </Modal>
+
       <div className="App">
         <Header/>
         <Routes>

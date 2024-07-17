@@ -1,5 +1,6 @@
 import {  SimpleGrid } from "@mantine/core";
-import CustomSection from "./CustomSection";
+
+import Program from "./Program";
 const programs = [
   {
     id: 1,
@@ -58,9 +59,9 @@ export default function ProgramsGrid() {
     <div>
         
           <SimpleGrid cols={{ base: 1, md: 4 }} spacing={25}>
-          {programs.map((item)=>{
+          {programs.map((item,index)=>{
             return (
-                <CustomSection key={item.id} title={item.title} desc={item.description} poster={item.imageUrl}/> 
+                <Program key={item.id} title={item.title} desc={item.description} poster={item.imageUrl} eventnum={index + 1}/> 
             )
           })}
               </SimpleGrid>

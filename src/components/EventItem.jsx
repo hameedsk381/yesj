@@ -10,7 +10,7 @@ function EventItem(props) {
           {/* Event Details Page */}
           <div className="bg-green-200 py-16 px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-4xl font-bold mb-8 text-center text-gray-800">{title}</h2>
+              <h2 className="text-4xl font-bold mb-8 text-center text-red-500">{title}</h2>
               <img src={imageUrl} alt="Event Detail" className="w-full h-96 object-cover rounded-xl mb-8" />
               <div className="space-y-6 text-gray-700">
                 <p className='text-center'>{description}</p>
@@ -18,17 +18,17 @@ function EventItem(props) {
             </div>
           </div>
 
-          {/* Stat Section */}
-          <div className="bg-gradient-to-r from-indigo-500 to-purple-600 py-16">
+           {/* Stat Section */}
+        <div className="bg-gradient-to-r from-indigo-500 to-purple-600 py-16">
           <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-around items-center">
-  {stats.map((stat, statIndex) => (
-    <div key={statIndex} className="text-center px-4 py-6 flex flex-col">
-      <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2">{stat.count}</h3>
-      <p className="text-lg md:text-xl text-white">{stat.description}</p>
-    </div>
-  ))}
-</div>
+            {stats.map((stat, statIndex) => (
+              <div key={statIndex} className="text-center px-4 py-6 flex flex-col">
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2">{stat.count}</h3>
+                <p className="text-lg md:text-xl text-white">{stat.description}</p>
+              </div>
+            ))}
           </div>
+        </div>
 
           {/* Image Gallery */}
           <div className="py-16 px-4 bg-gray-50">
@@ -50,7 +50,7 @@ function EventItem(props) {
           </div>
 
           {/* Testimonial Section */}
-          <div className="bg-gradient-to-r from-indigo-100 to-purple-100 py-16 px-4">
+          <div className="bg-gradient-to-r from-red-100 to-blue-100 py-16 px-4">
             <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">What Our Participants Say</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {testimonials.map((testimonial, testimonialIndex) => (
