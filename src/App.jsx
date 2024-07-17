@@ -17,6 +17,7 @@ import Contact from './components/Contact';
 import Gallery from './components/Gallery';
 import CourseRegistrationForm from './components/CourseRegistrationForm';
 import EventDetails from './components/EventDetails';
+import YesjEchos from './components/YesjEchos';
 // ... other pages
 import 'leaflet/dist/leaflet.css';
 import { IconArrowRight } from '@tabler/icons-react';
@@ -68,6 +69,7 @@ function App() {
           <Route path='/contactus' element={<Contact/>}/>
           <Route path='/mediagallery' element={<Gallery/>}/>
           <Route path="event/:id" element={<EventDetails />} />
+          <Route path='/yesjechos' element={<YesjEchos/>}/>
           {/* ... other routes */}
         </Routes>
         <Footer/>
