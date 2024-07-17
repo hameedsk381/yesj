@@ -67,7 +67,7 @@ function Footer() {
         <div className={classes.groups}>{groups}</div>
       </Container> */}
       <Container className={classes.afterFooter}>
-        <Text color="dimmed" size="sm">
+        <Text color="dimmed" size="sm" fw={600}>
           © 2024 YesJ. All rights reserved.
         </Text>
         <Group gap={0} className={classes.social} justify="flex-end" wrap="nowrap">
