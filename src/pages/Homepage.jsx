@@ -29,7 +29,7 @@ const Homepage = () => {
   return (
     <div>
     
-     <HeroSection/>
+     {/* <HeroSection/> */}
      <Carouselslider/>
      <About/>
      <ImpactMetrics/>
@@ -41,8 +41,8 @@ const Homepage = () => {
      <TestimonialCarousel/>
      <GetInvolved/>
         <SuccessStories />
-        <Contact/>
-        <Chatbot/>
+  
+        {/* <Chatbot/> */}
         {/* <Carouselslider/> */}
  
     

@@ -1,5 +1,7 @@
 import React from 'react';
 import ProgramItemCard from './ProgramItemCard';
+import ProgramsGrid from './ProgramsGrid';
+import { Container } from '@mantine/core';
 
 const programsList = [
   {
@@ -50,6 +52,7 @@ const ProgramList = () => {
   return (
     <div className="bg-gradient-to-r from-blue-50 to-indigo-50 min-h-screen">
       {/* Hero Section */}
+
       <div className="relative w-full h-96">
         <img 
           src="https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80" 
@@ -74,6 +77,8 @@ const ProgramList = () => {
           ))}
         </div>
       </div>
+
+
 
       {/* Newsletter Section */}
       {/* <div className="bg-gradient-to-r from-purple-500 to-indigo-600 py-16">

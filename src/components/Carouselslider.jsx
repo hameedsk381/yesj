@@ -17,7 +17,7 @@ function Carouselslider() {
     useEffect(() => {
         const autoplay = setInterval(() => {
             setCurrent((prev) => (prev + 1) % images.length);
-        }, 9000);  // Change slide every 3 seconds
+        }, 3000);  // Change slide every 3 seconds
 
         return () => clearInterval(autoplay);  // Cleanup the interval on component unmount
     }, []);
