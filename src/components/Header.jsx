@@ -60,7 +60,7 @@ function Header() {
           >
             <Tabs.List>{items}</Tabs.List>
           </Tabs>
-          {/* {login ? <ProfileMenu /> : <Button onClick={open}>Login / Register</Button>} */}
+          {login ? <ProfileMenu /> : <Button onClick={open}>Login / Register</Button>}
         </nav>
         <div className="flex md:hidden justify-between w-full pb-1 pr-3">
           <Avatar src="YESJ_Logo_Black.png" alt="Yesj" radius="xl" size="3.5rem" />
