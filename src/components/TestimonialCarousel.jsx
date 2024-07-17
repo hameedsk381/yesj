@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './Slider.css';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const testimonials = [
   {
@@ -32,41 +31,45 @@ const videoTestimonials = [
 ];
 
 const TestimonialCarousel = () => {
-    const [current, setCurrent] = useState(0);
+  const [current, setCurrent] = useState(0);
 
-    useEffect(() => {
-        const autoplay = setInterval(() => {
-            setCurrent((prev) => (prev + 1) % testimonials.length);
-        }, 9000);  // Change slide every 3 seconds
+  useEffect(() => {
+    const autoplay = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % testimonials.length);
+    }, 5000);  // Change slide every 5 seconds
 
-        return () => clearInterval(autoplay);  // Cleanup the interval on component unmount
-    }, []);
+    return () => clearInterval(autoplay);  // Cleanup the interval on component unmount
+  }, []);
 
   return (
-    <section className=" py-16">
+    <section className="py-16 bg-gradient-to-r from-blue-100 to-teal-100">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold mb-12">Testimonials</h2>
-        <div className="flex gap-10" style={{margin:'auto'}}>
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              className={ index === current ? 'active flex flex-col items-center bg-gray-100 p-4 rounded-lg shadow-lg mb-10  ' : `flex flex-col items-center bg-gray-100 p-4 rounded-lg shadow-lg mb-10  `}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              <img
-                src={testimonial.image}
-                alt={testimonial.name}
-                className="w-24 h-24 rounded-full object-cover mb-4"
-              />
-              <p className="text-xl font-semibold mb-2">{testimonial.name}</p>
-              <p className="text-gray-700 italic">"{testimonial.quote}"</p>
-            </motion.div>
-          ))}
-      </div>
-
-        <h3 className="text-3xl md:text-4xl font-bold mt-8 mb-8">Video Testimonials</h3>
+        <h2 className="text-4xl md:text-5xl font-bold mb-12 text-gray-800">Testimonials</h2>
+        <div className="relative overflow-hidden h-64">
+          <AnimatePresence initial={false}>
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                className={index === current ? 'absolute inset-0 flex flex-row items-center bg-white p-8 lg:mx-80 rounded-lg shadow-lg' : 'hidden'}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.5 }}
+              >
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  className="w-24 h-24 rounded-full object-cover mb-4"
+                />
+               <div className='ml-10'>
+               <p className="text-xl text-left ml-6 font-semibold mb-2">{testimonial.name}</p>
+                <p className="text-gray-700 italic">"{testimonial.quote}"</p>
+               </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </div>
+        <h3 className="text-3xl md:text-4xl font-bold mt-12 mb-8 text-gray-800">Video Testimonials</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {videoTestimonials.map((video) => (
             <div key={video.id} className="relative">

@@ -27,11 +27,11 @@ import Chatbot from '../components/Chatbot'
 
 const Homepage = () => {
   return (
-    <div>
+    <div >
     
      {/* <HeroSection/> */}
      <Carouselslider/>
-     <About/>
+     {/* <About/> */}
      <ImpactMetrics/>
      <ServicesOverview/>
      <DynamicProgrammes/>

@@ -1,4 +1,4 @@
-import { Title, SimpleGrid, Text, Button, ThemeIcon, Grid, rem, Container, Flex } from '@mantine/core';
+import { Title, SimpleGrid, Text, Button, ThemeIcon, Grid, rem, Container, Flex, Divider } from '@mantine/core';
 import { IconReceiptOff, IconFlame, IconCircleDotted, IconFileCode } from '@tabler/icons-react';
 import classes from './about.module.css';
 import Carouselslider from './Carouselslider';
@@ -50,9 +50,9 @@ export function About() {
  
 
   return (
-    <Flex className={classes.wrapper} size={'xl'} pl={'8%'} pb={'8%'}>
-      <Grid gutter={80} display={'flex'}  >
-        <Grid.Col span={{ base: 12, md: 5 }}>
+    <Container size={'xl'} px={'10%'} py={'5%'}>
+     
+   
           <Title className={classes.title} ta={'center'} order={2}>
           YOUTH EMPOWERING SERVICE - JESUITS 
           </Title>
@@ -60,15 +60,14 @@ export function About() {
           In India, the Telugu speaking states of Andhra Pradesh and Telangana consist of almost 85 million people of which a vast majority are young. Most of the youth living in rural, semi-urban and urban slum areas encounter the harsh realities of poverty, lack of education, unemployment, casteism, gender discrimination and social inequality. We exist to bring social, psychological, spiritual and practical help to young people in need, irrespective of their caste, religion and social background. 
           </Text>
 
-         
-        </Grid.Col>
-       <Grid.Col span={{ base: 12, md: 7 }}>
-       <SimpleGrid  cols={{ base: 1, md: 2 }}>
+   
+       
+    
+       <SimpleGrid  cols={{ base: 1, md: 2 }} mt={60}>
             {items}
           </SimpleGrid>
-       </Grid.Col>
-      </Grid>
-    </Flex>
+   
+    </Container>
   );
 }
 export default About;

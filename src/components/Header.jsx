@@ -10,7 +10,6 @@ import classes from './HeaderTabs.module.css';
 
 const tabs = [
   'Home',
-  'Our Mission',
   'About Us',
   'Programmes',
   'Yesj Echos',
