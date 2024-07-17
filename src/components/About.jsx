@@ -53,7 +53,7 @@ export function About() {
     <Flex className={classes.wrapper} size={'xl'} pl={'8%'} pb={'8%'}>
       <Grid gutter={80} display={'flex'}  >
         <Grid.Col span={{ base: 12, md: 5 }}>
-          <Title className={classes.title} order={2}>
+          <Title className={classes.title} ta={'center'} order={2}>
           YOUTH EMPOWERING SERVICE - JESUITS 
           </Title>
           <Text c="dimmed" styles={{root:{textAlign:"justify"}}} py={20}>

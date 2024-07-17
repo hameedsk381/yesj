@@ -5,9 +5,7 @@ const images = [
     'https://yesj.org/assets/images/slider-01.jpg',
     'https://yesj.org/assets/images/slider-2.jpg',
     'https://yesj.org/assets/images/slider-3.jpg',
-    'https://yesj.org/assets/in-banners/banner-OurMission.jpg',
-    'https://yesj.org/assets/in-banners/banner-aboutus.jpg',
-    'https://yesj.org/assets/in-banners/banner-programmes.jpg'
+   
    
 ];
 
