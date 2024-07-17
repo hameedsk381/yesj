@@ -1,21 +1,12 @@
-import {
-  Container,
-  Group,
-  Tabs,
-  Button,
-  Modal,
-  Avatar,
-  Burger,
-} from '@mantine/core';
+import React, { useState } from 'react';
+import { Container, Group, Tabs, Button, Modal, Avatar, Burger } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconArrowRight } from '@tabler/icons-react';
-import classes from './HeaderTabs.module.css';
-import ProfileMenu from './ProfileMenu';
 import { Link, Outlet } from 'react-router-dom';
-import { useState } from 'react';
 import Login from '../pages/Login';
 import Register from './Register';
-import CourseRegistrationForm from './CourseRegistrationForm'; // Import the course registration form
+import CourseRegistrationForm from './CourseRegistrationForm';
+import classes from './HeaderTabs.module.css';
 
 const tabs = [
   'Home',
@@ -25,15 +16,14 @@ const tabs = [
   'Yesj Echos',
   'Media Gallery',
   'Contribute',
- 
 ];
 
 function Header() {
   const [opened, { open, close }] = useDisclosure(false);
-  const [courseModalOpened, { open: openCourseModal, close: closeCourseModal }] = useDisclosure(false);
   const [login, setLogin] = useState(false);
   const [currentView, setCurrentView] = useState('login'); // or 'register'
   const [menuOpened, setMenuOpened] = useState(false); // Hamburger menu state
+
   const showLogin = () => {
     setCurrentView('login');
   };
@@ -57,38 +47,26 @@ function Header() {
         {currentView === 'login' ? <Login onRegisterClick={showRegister} /> : <Register onLoginClick={showLogin} />}
       </Modal>
 
-      <Modal fullScreen opened={courseModalOpened} onClose={closeCourseModal}>
-        <CourseRegistrationForm />
-      </Modal>
-
       <header className={classes.header}>
-      <nav className='hidden md:flex justify-around py-2'>
-           
-           <Tabs
-             defaultValue="Home"
-             variant="default"
-        
-             classNames={{
-               root: classes.tabs,
-               list: classes.tabsList,
-               tab: classes.tab,
-             }}
-           >
-             <Tabs.List>{items}
-            
-             </Tabs.List>
-           </Tabs>
-         
-        
-         <Button  rightSection={<IconArrowRight size={14} />} onClick={openCourseModal}>Register for a course</Button>
-         {/* {login ? <ProfileMenu /> : <Button onClick={open}>Login / Register</Button>} */}
-        
-       </nav>
-       <div className=" flex md:hidden justify-between w-full pb-1 pr-3">
-       <Avatar src="YESJ_Logo_Black.png" alt="Yesj" radius="xl" size="3.5rem" />
-              <Burger opened={menuOpened} onClick={() => setMenuOpened((o) => !o)} />
-            </div>
-       {menuOpened && (
+        <nav className="hidden md:flex justify-around py-2">
+          <Tabs
+            defaultValue="Home"
+            variant="default"
+            classNames={{
+              root: classes.tabs,
+              list: classes.tabsList,
+              tab: classes.tab,
+            }}
+          >
+            <Tabs.List>{items}</Tabs.List>
+          </Tabs>
+          {/* {login ? <ProfileMenu /> : <Button onClick={open}>Login / Register</Button>} */}
+        </nav>
+        <div className="flex md:hidden justify-between w-full pb-1 pr-3">
+          <Avatar src="YESJ_Logo_Black.png" alt="Yesj" radius="xl" size="3.5rem" />
+          <Burger opened={menuOpened} onClick={() => setMenuOpened((o) => !o)} />
+        </div>
+        {menuOpened && (
           <nav className="md:hidden bg-white shadow-md absolute top-full left-0 w-full z-50">
             <Tabs
               defaultValue="Home"
@@ -99,16 +77,16 @@ function Header() {
                 tab: classes.tab,
               }}
             >
-              <Tabs.List onClick={() => setMenuOpened((o) => !o)}>{items}</Tabs.List>
+              <Tabs.List onClick={() => setMenuOpened(false)}>{items}</Tabs.List>
             </Tabs>
           </nav>
         )}
       </header>
       
-      <div className='hidden md:block'>
-      <div className={classes.avatarContainer}>
-        <Avatar src="YESJ_Logo_Black.png" alt="Yesj" radius="xl" size="5.5rem" />
-      </div>
+      <div className="hidden md:block">
+        <div className={classes.avatarContainer}>
+          <Avatar src="YESJ_Logo_Black.png" alt="Yesj" radius="xl" size="5.5rem" />
+        </div>
       </div>
       
       <Outlet />
