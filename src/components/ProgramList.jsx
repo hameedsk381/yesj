@@ -1,7 +1,7 @@
 import React from 'react';
 import ProgramItemCard from './ProgramItemCard';
-import ProgramsGrid from './ProgramsGrid';
-import { Container } from '@mantine/core';
+// import ProgramsGrid from './ProgramsGrid';
+// import { Container } from '@mantine/core';
 
 const programsList = [
   {
