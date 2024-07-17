@@ -99,7 +99,7 @@ function Header() {
                 tab: classes.tab,
               }}
             >
-              <Tabs.List>{items}</Tabs.List>
+              <Tabs.List onClick={() => setMenuOpened((o) => !o)}>{items}</Tabs.List>
             </Tabs>
           </nav>
         )}
