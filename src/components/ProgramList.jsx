@@ -56,7 +56,7 @@ const ProgramList = () => {
   return (
     <div className="bg-gradient-to-r from-blue-50 to-indigo-50 min-h-screen">
       {/* Hero Section */}
-      <div className="relative w-full h-[10px] lg:h-full">
+      <div className="relative w-full h-[100px] lg:h-full">
         <img src="https://yesj.org/assets/in-banners/banner-programmes.jpg" alt="Event" className="w-full h-full object-cover" />
        
       </div>

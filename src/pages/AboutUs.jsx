@@ -4,7 +4,7 @@ import About from '../components/About'
 const AboutUs = () => {
   return (
     <div>
-      <img src='https://yesj.org/assets/in-banners/banner-aboutus.jpg'/>
+      <img className='h-[120px] object-cover lg:h-[200px] w-full' src='https://yesj.org/assets/in-banners/banner-aboutus.jpg'/>
       <About/>
     </div>
   )
