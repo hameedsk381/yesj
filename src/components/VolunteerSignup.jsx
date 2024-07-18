@@ -25,7 +25,7 @@ const VolunteerSignup = () => {
 
   return (
     <>
-      <Button color='red' onClick={() => setOpened(true)} className="bg-blue-500 hover:bg-blue-600">
+      <Button  onClick={() => setOpened(true)} className="bg-red-900 hover:bg-red-600">
         Volunteer Signup
       </Button>
       <Modal opened={opened} onClose={() => setOpened(false)} title="Volunteer Signup">

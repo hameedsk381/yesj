@@ -22,9 +22,9 @@ function ContactIcon({ icon: Icon, title, description, ...others }) {
 }
 
 const MOCKDATA = [
-  { title: 'Email', description: 'hello@mantine.dev', icon: IconAt },
-  { title: 'Phone', description: '+49 (800) 335 35 35', icon: IconPhone },
-  { title: 'Address', description: '844 Morris Park avenue', icon: IconMapPin },
+  { title: 'Email', description: 'yesjcontact@gmail.com', icon: IconAt },
+  { title: 'Phone', description: '+91-8866727202', icon: IconPhone },
+  { title: 'Address', description: 'Andhra Loyola College, Vijayawada, Andhra Pradesh, India - 522 008', icon: IconMapPin },
   { title: 'Working hours', description: '8 a.m. – 11 p.m.', icon: IconSun },
 ];
 

@@ -1,10 +1,11 @@
 import { Text, Title, TextInput, Button, Image } from '@mantine/core';
 import classes from './newsletter.module.css';
 import VolunteerSignup from './VolunteerSignup';
-
+import volunteer from '../assets/volunteer.png'
 export function NewsLetter() {
   return (
     <div className={classes.wrapper}>
+      
       <div className={classes.body}>
         <Title fw={1000} fz="xl" mb={5}  className={classes.heading}>
         BECOME A VOLUNTEER
@@ -16,7 +17,7 @@ export function NewsLetter() {
 >Come and immerse yourself to change your world.</Text>
        <VolunteerSignup/>
       </div>
-      <Image src={'https://yesj.org/assets/images/pl-3.jpg'} alt='image' className={classes.image} />
+      <img src={volunteer} alt='image' className={classes.image} />
     </div>
   );
 }

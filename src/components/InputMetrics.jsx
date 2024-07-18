@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const metrics = [
   { id: 1, label: 'People Helped', value: '10,000+', icon: '👥' },
   { id: 2, label: 'Projects Completed', value: '150+', icon: '📊' },
-  { id: 3, label: 'Funds Raised', value: '$1,000,00+', icon: '💰' },
+  { id: 3, label: 'Funds Raised', value: '$1,000,000+', icon: '💰' },
 ];
 
 const cardVariants = {
@@ -14,9 +14,11 @@ const cardVariants = {
 
 const ImpactMetrics = () => {
   return (
-    <section className=" py-16">
+    <section className="py-16 px-8 ">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold mb-12">Our Impact</h2>
+        <h2 className="text-4xl md:text-5xl font-bold mb-12 text-gray-800">
+          Our Impact
+        </h2>
         <motion.div
           initial="hidden"
           animate="visible"
@@ -27,13 +29,13 @@ const ImpactMetrics = () => {
             <motion.div
               key={metric.id}
               variants={cardVariants}
-              className="bg-gray-200 p-6 rounded-lg shadow-lg"
+              className="bg-gradient-to-r from-red-400 to-blue-400 p-6 rounded-xl shadow-lg hover:shadow-2xl transform transition duration-300 ease-in-out"
             >
               <div className="text-6xl mb-4">{metric.icon}</div>
-              <div className="text-6xl font-extrabold text-blue-600 mb-4">
+              <div className="text-4xl font-extrabold text-white mb-2">
                 {metric.value}
               </div>
-              <div className="text-xl font-medium text-gray-700">
+              <div className="text-2xl font-medium text-white">
                 {metric.label}
               </div>
             </motion.div>

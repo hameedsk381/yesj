@@ -3,8 +3,8 @@ import StoryMap from './StoryMap';
 import FeaturedStories from './FeaturedStories';
 
 const locations = [
-  { position: [34.0522, -118.2437], title: 'Los Angeles, USA', description: 'Clean Water Project' },
-  { position: [13.7563, 100.5018], title: 'Bangkok, Thailand', description: 'School Building Project' },
+  { position: [16.50879740194773, 80.65869949766015], title: 'Andhra Loyola', description: 'Clean Water Project' },
+  { position: [16.50921728801926, 80.64798418231874], title: 'Christ The King', description: 'School Building Project' },
   // Add more locations here...
 ];
 
@@ -16,7 +16,7 @@ const SuccessStories = () => {
         <div className="mb-12">
           <StoryMap locations={locations} />
         </div>
-        <FeaturedStories />
+        {/* <FeaturedStories /> */}
       </div>
     </section>
   );

@@ -7,10 +7,9 @@ import ProgramList from './ProgramList'
 const Programmes = () => {
   return (
     <div className='bg-gradient-to-r from-blue-300  via-indigo-200 to-indigo-300'>
-        
-        <Container py={'5%'} size={'xl'}>
+    
         <ProgramList/>
-    </Container>
+   
     </div>
    
   )

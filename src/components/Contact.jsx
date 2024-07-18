@@ -8,19 +8,36 @@ import {
   Group,
   ActionIcon,
   Box,
+  Anchor,
 } from '@mantine/core';
-import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons-react';
+import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram, IconBrandFacebook } from '@tabler/icons-react';
 import { ContactIconsList } from './ContactIcons';
 import classes from './ContactUs.module.css';
 
-const social = [IconBrandTwitter, IconBrandYoutube, IconBrandInstagram];
+const social = [
+  {
+    link: 'https://www.facebook.com/p/Yesj-India-100064349035932/',
+    icon: IconBrandFacebook,
+  },
+  {
+    link: 'https://www.youtube.com/channel/UCTSkz72_2ss_e8u33rqmZvQ',
+    icon: IconBrandYoutube,
+  },
+  {
+    link: 'https://www.instagram.com/explore/locations/105637734587280/yesj-india/',
+    icon: IconBrandInstagram,
+  },
+];
+
 
 export function Contact() {
-  const icons = social.map((Icon, index) => (
-    <ActionIcon key={index} size={28} className={classes.social} variant="transparent">
-      <Icon size="1.4rem" stroke={1.5} />
-    </ActionIcon>
-  ));
+  const icons = social.map((socialItem, index) => (
+    <Anchor href={socialItem.link} key={index} target="_blank">
+      <ActionIcon size={28} className={classes.social} variant="transparent">
+        <socialItem.icon size="1.4rem" stroke={1.5} />
+      </ActionIcon>
+    </Anchor>
+  ))
 
   return (
     <Box className={classes.wrapper}>

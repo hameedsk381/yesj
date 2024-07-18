@@ -64,7 +64,7 @@ function App() {
           <Route path="/ourmission" element={<OurMission />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path='*' element={<ErrorPage/>}/>
-          <Route path='/ourmission' element={<OurMission/>}/>
+    
           <Route path='/programmes' element={<Programmes/>}/>
           <Route path='/contactus' element={<Contact/>}/>
           <Route path='/mediagallery' element={<Gallery/>}/>

@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-
+import { motion } from 'framer-motion';
 import Program from './Program';
 
 const programs = [
@@ -74,15 +74,15 @@ const DynamicProgrammes = () => {
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-12">Our Programmes</h2>
         <div className="relative">
-          <button
-            className="absolute left-0  top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-10"
-            onClick={scrollLeft}
-          >
-            &#9664;
-          </button>
+        
           <div
             ref={containerRef}
-            className="flex overflow-x-hidden space-x-8 pb-4"
+            className="flex overflow-x-hidden space-x-3 pb-4"
+          >
+             <motion.div
+            animate={{ x: ['100%', '-100%'] }}
+            transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+            className="flex space-x-8"
           >
             {programs.map((item,index) => (
               <Program
@@ -91,14 +91,9 @@ const DynamicProgrammes = () => {
                 desc={item.description}
                 poster={item.imageUrl} eventnum={index + 1}
               />
-            ))}
+            ))}</motion.div>
           </div>
-          <button
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-10"
-            onClick={scrollRight}
-          >
-            &#9654;
-          </button>
+         
         </div>
       </div>
     </section>
