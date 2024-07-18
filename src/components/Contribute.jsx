@@ -1,10 +1,10 @@
 import React from 'react';
 import DonationDetails from './DonationDetails';
-
+import ourgoals from '../assets/our-goals-bg.jpg'
 const Contribute = () => {
   return (
     <div className="min-h-screen bg-gradient-to-r from-emerald-400 to-cyan-400 text-gray-900">
-      
+         {/* <img src={ourgoals} alt="our goals" /> */}
       {/* Main Section */}
       <main className="container mx-auto py-16 px-4">
         <section className="text-center mb-16">
