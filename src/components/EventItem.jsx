@@ -49,7 +49,7 @@ function EventItem(props) {
 
       {/* Testimonial Section */}
       <div className="bg-gradient-to-r from-red-500 to-blue-600 py-16 px-4">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">What Our Participants Say</h2>
+        <h2 className="text-3xl font-bold text-center mb-12 text-white">What Our Participants Say</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {testimonials.map((testimonial, testimonialIndex) => (
             <div key={testimonialIndex} className="bg-white p-6 rounded-xl shadow-lg">

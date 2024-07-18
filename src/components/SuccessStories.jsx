@@ -16,7 +16,7 @@ const SuccessStories = () => {
         <div className="mb-12">
           <StoryMap locations={locations} />
         </div>
-        <FeaturedStories />
+        {/* <FeaturedStories /> */}
       </div>
     </section>
   );
