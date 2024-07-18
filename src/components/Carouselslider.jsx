@@ -1,93 +1,124 @@
-// import  { useState, useEffect } from 'react';
-// import './Slider.css';
-
-// const images = [
-//     'https://yesj.org/assets/images/slider-01.jpg',
-//     'https://yesj.org/assets/images/slider-2.jpg',
-//     'https://yesj.org/assets/images/slider-3.jpg',
-   
-   
-// ];
-
-// function Carouselslider() {
-//     const [current, setCurrent] = useState(0);
-
-//     useEffect(() => {
-//         const autoplay = setInterval(() => {
-//             setCurrent((prev) => (prev + 1) % images.length);
-//         }, 3000);  // Change slide every 3 seconds
-
-//         return () => clearInterval(autoplay);  // Cleanup the interval on component unmount
-//     }, []);
-
-//     return (
-//         <div className="slider" style={{margin:'auto'}}>
-//             {images.map((image, index) => (
-//                 <img
-//                     key={index}
-//                     src={image} 
-//                     alt=""
-//                     className={index === current ? 'active' : ''}
-//                 />
-//             ))}
-//         </div>
-//     );
-// }
-
-// export default Carouselslider;
 import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const slides = [
-    {
-        image: 'https://yesj.org/assets/images/slider-01.jpg',
-        quote: 'I have dreams ENCOURAGE'
-    },
-    {
-        image: 'https://yesj.org/assets/images/slider-2.jpg',
-        quote: 'Together, we make a difference'
-    },
-    {
-        image: 'https://yesj.org/assets/images/slider-3.jpg',
-        quote: 'Empower communities'
-    },
+  {
+    image: 'https://yesj.org/assets/images/slider-01.jpg',
+    quote: 'I have dreams',
+    tag: 'ENCOURAGE'
+  },
+  {
+    image: 'https://yesj.org/assets/images/slider-2.jpg',
+    quote: 'Together, we make a',
+    tag: 'DIFFERENCE'
+  },
+  {
+    image: 'https://yesj.org/assets/images/slider-3.jpg',
+    quote: 'Empower',
+    tag: 'COMMUNITIES'
+  },
 ];
 
-function Carouselslider() {
-    const [current, setCurrent] = useState(0);
+const slideVariants = {
+  enter: (direction) => {
+    return {
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0
+    };
+  },
+  center: {
+    zIndex: 1,
+    x: 0,
+    opacity: 1,
+  },
+  exit: (direction) => {
+    return {
+      zIndex: 0,
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0
+    };
+  }
+};
 
-    useEffect(() => {
-        const autoplay = setInterval(() => {
-            setCurrent((prev) => (prev + 1) % slides.length);
-        }, 3000);  // Change slide every 3 seconds
+const Carouselslider = () => {
+  const [[current, direction], setCurrent] = useState([0, 0]);
 
-        return () => clearInterval(autoplay);  // Cleanup the interval on component unmount
-    }, []);
+  useEffect(() => {
+    const autoplay = setInterval(() => {
+      setCurrent(([prev]) => [(prev + 1) % slides.length, 1]);
+    }, 5000);  // Change slide every 3 seconds
 
-    return (
-        <div className="w-full overflow-hidden relative">
-            {slides.map((slide, index) => (
-                <div
-                    key={index}
-                    className={`w-full ${index === current ? 'block' : 'hidden'} relative`}
+    return () => clearInterval(autoplay);  // Cleanup the interval on component unmount
+  }, []);
+
+  const paginate = (newDirection) => {
+    setCurrent([current + newDirection, newDirection]);
+  };
+
+  return (
+    <div className="w-full h-screen overflow-hidden relative">
+      <AnimatePresence initial={false} custom={direction}>
+        {slides.map((slide, index) => (
+          index === current && (
+            <motion.div
+              key={index}
+              className="w-full h-full absolute top-0 left-0"
+              variants={slideVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              custom={direction}
+              transition={{
+                x: { type: 'spring', stiffness: 300, damping: 30 },
+                opacity: { duration: 0.2 }
+              }}
+            >
+              <img
+                src={slide.image}
+                alt=""
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute left-3 top-12 md:left-10 md:top-24 lg:left-16 lg:top-32 text-white text-xl md:text-2xl lg:text-3xl font-bold p-2 md:p-3">
+                <motion.p
+                  className='mb-2 ml-10 bg-red-500 w-fit text-white p-2 rounded-md'
+                  initial={{ y: -20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.5 }}
                 >
-                    <img
-                        src={slide.image}
-                        alt=""
-                        className="w-full h-auto"
-                    />
-                    {index === current && (
-                        <div className="absolute left-3 top-3 md:left-10 md:top-24 lg:left-16 lg:top-32 text-black text-sm md:text-2xl lg:text-3xl font-bold p-2 md:p-3 ">
-                            <p className='mb-2'>" {slide.quote} "</p>
-                            <button className="bg-gradient-to-r from-red-500 to-orange-500 shadow-lg py-1 px-2 md:py-2 md:px-4 rounded-md text-xs md:text-sm mt-2">
-                                JOIN US
-                            </button>
-                        </div>
-                    )}
-                </div>
-            ))}
-        </div>
-    );
+                  {slide.quote}
+                </motion.p>
+                <motion.p
+                  className='mb-2 bg-blue-500 w-fit text-white p-2 rounded-md'
+                  initial={{ y: -20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 1 }}
+                >
+                  {slide.tag}
+                </motion.p>
+                {/* <motion.button
+                  className="bg-gradient-to-r from-red-500 to-orange-500 shadow-lg py-1 px-2 md:py-2 md:px-4 rounded-md text-xs md:text-sm mt-2"
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ delay: 1.5 }}
+                >
+                  JOIN US
+                </motion.button> */}
+              </div>
+            </motion.div>
+          )
+        ))}
+      </AnimatePresence>
+      <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            className={`h-2 w-2 md:h-4 md:w-4 rounded-full ${index === current ? 'bg-blue-500' : 'bg-gray-400'}`}
+            onClick={() => paginate(index - current)}
+          />
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default Carouselslider;
-

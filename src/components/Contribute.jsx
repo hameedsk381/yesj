@@ -1,4 +1,5 @@
 import React from 'react';
+import DonationDetails from './DonationDetails';
 
 const Contribute = () => {
   return (
@@ -7,13 +8,13 @@ const Contribute = () => {
       {/* Main Section */}
       <main className="container mx-auto py-16 px-4">
         <section className="text-center mb-16">
-          <h1 className="text-3xl md:text-3xl lg:text-4xl font-bold text-black mb-4">Make a Difference Today</h1>
-          <p className="text-md md:text-lg lg:text-xl text-black mb-2">Your donation can change lives. Every contribution, no matter how small, helps us create a better world.</p>
+          <h1 className="text-3xl md:text-3xl lg:text-4xl font-bold text-white mb-4">Make a Difference Today</h1>
+          <p className="text-md md:text-lg lg:text-xl text-white mb-2">Your donation can change lives. Every contribution, no matter how small, helps us create a better world.</p>
         </section>
 
         {/* Donation Form */}
-        <section className="max-w-3xl mx-auto bg-white p-6 md:p-10 rounded-lg shadow-lg">
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-black">Donate Now</h2>
+        {/* <section className="max-w-3xl mx-auto bg-white p-6 md:p-10 rounded-lg shadow-lg">
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-red-500">Donate Now</h2>
           <form className="space-y-6">
             <div>
               <label className="block text-gray-700 font-semibold mb-2" htmlFor='name'>Name</label>
@@ -51,11 +52,11 @@ const Contribute = () => {
             </div>
             <button type="submit" className="w-full bg-blue-600 text-white p-4 rounded-md font-bold hover:bg-blue-700">Donate</button>
           </form>
-        </section>
-
+        </section> */}
+<DonationDetails/>
         {/* Testimonials */}
         <section className="mt-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-black">What Our Donors Say</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-white">What Our Donors Say</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-white p-6 rounded-lg shadow-lg">
               <p className="text-gray-700">"This organization is doing an amazing job!"</p>
