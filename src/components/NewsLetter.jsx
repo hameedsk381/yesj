@@ -5,6 +5,7 @@ import volunteer from '../assets/volunteer.png'
 export function NewsLetter() {
   return (
     <div className={classes.wrapper}>
+      
       <div className={classes.body}>
         <Title fw={1000} fz="xl" mb={5}  className={classes.heading}>
         BECOME A VOLUNTEER

@@ -67,20 +67,12 @@ function Footer() {
         <div className={classes.groups}>{groups}</div>
       </Container> */}
       <Container className={classes.afterFooter}>
-        <Text color="dimmed" size="sm" fw={600}>
+        <Text color="dimmed" size="md" fw={600}>
           © 2024 YesJ. All rights reserved.
         </Text>
-        <Group gap={0} className={classes.social} justify="flex-end" wrap="nowrap">
-          <ActionIcon size="lg" color="gray" variant="subtle">
-            <IconBrandTwitter style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
-          </ActionIcon>
-          <ActionIcon size="lg" color="gray" variant="subtle">
-            <IconBrandYoutube style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
-          </ActionIcon>
-          <ActionIcon size="lg" color="gray" variant="subtle">
-            <IconBrandInstagram style={{ width: rem(18), height: rem(18) }} stroke={1.5} />
-          </ActionIcon>
-        </Group>
+       <p className='text-lg font-semibold'>
+        Website developed by <span className=' text-2xl' style={{fontWeight:'bolder'}}><span className='text-red-500'>In</span>clusiv<span className='text-blue-500'>IT</span></span>
+       </p>
       </Container>
     </footer>
   );

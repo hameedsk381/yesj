@@ -33,8 +33,7 @@ const DonationBanner = () => {
           We will send you a tax receipt via email.
         </Text>
         <Button
-          variant="gradient"
-          gradient={{ from: 'blue', to: 'pink' }}
+         
           size="md"
           style={{ margin: '2rem 0' }}
         >

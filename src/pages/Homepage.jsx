@@ -39,7 +39,7 @@ const Homepage = () => {
      
      <DonorRecognition/>
      <TestimonialCarousel/>
-     <GetInvolved/>
+     <NewsLetter/>
         <SuccessStories />
   
         {/* <Chatbot/> */}
