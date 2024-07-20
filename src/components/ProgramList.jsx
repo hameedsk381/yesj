@@ -48,7 +48,19 @@ const programsList = [
       "imageUrl": "https://res.cloudinary.com/dwlbneeh4/image/upload/v1721121486/little-children-trick-treating-halloween_53876-49128_kxwrgn.jpg",
       "title": "SSP",
       "description": "Scholar Support Programme"
+    },
+    {
+      "id": 8,
+      "imageUrl": "https://res.cloudinary.com/dwlbneeh4/image/upload/v1721121486/little-children-trick-treating-halloween_53876-49128_kxwrgn.jpg",
+      "title": "ET",
+      "description": "Each One Teach Ten"
+    },{
+      "id": 9,
+      "imageUrl": "https://res.cloudinary.com/dwlbneeh4/image/upload/v1721121486/little-children-trick-treating-halloween_53876-49128_kxwrgn.jpg",
+      "title": "ET",
+      "description": "Each One Teach Ten"
     }
+
   ]
   
 

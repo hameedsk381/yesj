@@ -42,14 +42,14 @@ export function Contact() {
   return (
     <Box className={classes.wrapper}>
       <Box className={classes.inner}>
-        <Box className={classes.contactDetails}>
+        <div className={classes.contactDetails}>
           <Title className={classes.title}>Contact us</Title>
           <Text className={classes.description} mt="sm" mb={30}>
             Leave your email and we will get back to you within 24 hours
           </Text>
           <ContactIconsList />
           <Group mt="xl">{icons}</Group>
-        </Box>
+        </div>
         <Box className={classes.form}>
           <TextInput
             label="Email"

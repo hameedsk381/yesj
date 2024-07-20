@@ -1,5 +1,8 @@
 import {  SimpleGrid } from "@mantine/core";
-
+import eachone from '../assets/eachone copy.png'
+import joyone from '../assets/joylogo.png'
+import ogod from '../assets/Ogod_logo.png'
+import yuva from '../assets/Yuvotsavaalu.png'
 import Program from "./Program";
 const programs = [
   {
@@ -45,10 +48,34 @@ const programs = [
     hoverColor: '#fde2e4', // Example hover color, replace with actual color
   },
   {
-    id: 6,
+    id: 7,
     title: 'SSP',
     description: 'Scholar support Programme',
     imageUrl: 'https://yesj.org/assets/images/p7.png', // Replace with the actual path to the VIP image
+    hoverColor: '#fde2e4', // Example hover color, replace with actual color
+  },{
+    id: 8,
+    title: 'EOTT',
+    description: 'Each One Teach Ten',
+    imageUrl: eachone, // Replace with the actual path to the VIP image
+    hoverColor: '#fde2e4', // Example hover color, replace with actual color
+  },{
+    id: 9,
+    title: 'JOY',
+    description: 'Jobs For Youth Desk',
+    imageUrl: joyone, // Replace with the actual path to the VIP image
+    hoverColor: '#fde2e4', // Example hover color, replace with actual color
+  },{
+    id: 10,
+    title: 'O GOD',
+    description: 'Organised GOD Oriented Days',
+    imageUrl: ogod, // Replace with the actual path to the VIP image
+    hoverColor: '#fde2e4', // Example hover color, replace with actual color
+  },{
+    id: 10,
+    title: 'YUVA',
+    description: 'Yuvotsavaalu',
+    imageUrl: yuva, // Replace with the actual path to the VIP image
     hoverColor: '#fde2e4', // Example hover color, replace with actual color
   },
 ];

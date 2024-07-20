@@ -1,64 +1,55 @@
 import React from 'react';
-import { FaQuoteRight } from 'react-icons/fa';
+import { Avatar } from '@mantine/core';
 
-function EventItem(props) {
-  const { eventItemDetails } = props;
-  const { imageUrl, title, description, stats, imageList, testimonials } = eventItemDetails;
+const EventItem = ({ eventItemDetails }) => {
+  const {
+    imageUrl,
+    title,
+    description,
+    stats,
+    imageList,
+    testimonials
+  } = eventItemDetails;
 
   return (
-    <div className="bg-gray-100 min-h-screen">
-      {/* Event Details Page */}
-      <div className="py-16 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl lg:text-4xl font-bold mb-8 text-red-500 text-center">{title}</h2>
-          <img src={imageUrl} alt="Event Detail" className="w-full h-96 object-cover rounded-xl mb-8" />
-          <div className="space-y-6 text-gray-700">
-            <p className="text-center">{description}</p>
-          </div>
-        </div>
+    <div className="container mx-auto p-4 md:p-8">
+      <div className="text-center">
+        <h2 className="text-4xl font-bold mb-4">{title}</h2>
+        <img src={imageUrl} alt={title} className="w-full h-auto object-cover rounded-md shadow-lg mb-4" />
+        <p className="text-lg text-gray-700 mb-6">{description}</p>
       </div>
 
-      {/* Stat Section */}
-      <div className="bg-gradient-to-r from-red-500 to-blue-600 py-16">
-        <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-around items-center">
-          {stats.map((stat, statIndex) => (
-            <div key={statIndex} className="text-center px-4 py-6 flex flex-col">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2">{stat.count}</h3>
-              <p className="text-lg md:text-xl text-white">{stat.description}</p>
+      <div className="mb-10">
+        <h3 className="text-2xl font-semibold mb-4">Statistics</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {stats.map(stat => (
+            <div key={stat.id} className="bg-white p-6 rounded-lg shadow-lg text-center">
+              <p className="text-3xl font-bold text-blue-500">{stat.count}</p>
+              <p className="text-gray-700">{stat.description}</p>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Image Gallery */}
-      <div className="py-16 px-4 bg-gray-50">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Event Gallery</h2>
-        <div className="flex justify-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
-            {imageList.map((image, imageIndex) => (
-              <img
-                key={imageIndex}
-                src={image.imageUrl}
-                alt={`Gallery Image ${imageIndex + 1}`}
-                className="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
-              />
-            ))}
-          </div>
+      <div className="mb-10">
+        <h3 className="text-2xl font-semibold mb-4">Gallery</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {imageList.map(image => (
+            <img key={image.id} src={image.imageUrl} alt={title} className="w-full h-auto object-cover rounded-md shadow-lg" />
+          ))}
         </div>
       </div>
 
-      {/* Testimonial Section */}
-      <div className="bg-gradient-to-r from-red-500 to-blue-600 py-16 px-4">
-        <h2 className="text-3xl font-bold text-center mb-12 text-white">What Our Participants Say</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {testimonials.map((testimonial, testimonialIndex) => (
-            <div key={testimonialIndex} className="bg-white p-6 rounded-xl shadow-lg">
-              <FaQuoteRight className="text-indigo-500 text-3xl mb-4" />
-              <p className="text-gray-700 mb-6">{testimonial.quote}</p>
+      <div className="mb-10">
+        <h3 className="text-2xl font-semibold mb-4">Testimonials</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {testimonials.map((testimonial, index) => (
+            <div key={index} className="bg-white p-6 rounded-lg shadow-lg">
+              <p className="italic text-gray-600 mb-4">"{testimonial.quote}"</p>
               <div className="flex items-center">
-                <img src={testimonial.avatar} alt={`Participant ${testimonialIndex + 1}`} className="w-12 h-12 rounded-full mr-4 object-cover" />
+                <Avatar src={testimonial.avatar} alt={testimonial.participant} className="w-16 h-16 rounded-full mr-4" />
                 <div>
-                  <p className="text-indigo-600 font-semibold">{testimonial.participant}</p>
+                  <p className="font-semibold">{testimonial.participant}</p>
                   <p className="text-gray-500 text-sm">{testimonial.role}</p>
                 </div>
               </div>
@@ -68,6 +59,6 @@ function EventItem(props) {
       </div>
     </div>
   );
-}
+};
 
 export default EventItem;
