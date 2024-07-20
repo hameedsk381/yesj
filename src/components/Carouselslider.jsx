@@ -46,7 +46,7 @@ const Carouselslider = () => {
   useEffect(() => {
     const autoplay = setInterval(() => {
       setCurrent(([prev]) => [(prev + 1) % slides.length, 1]);
-    }, 5000);  // Change slide every 3 seconds
+    }, 5000);  // Change slide every 5 seconds
 
     return () => clearInterval(autoplay);  // Cleanup the interval on component unmount
   }, []);
@@ -56,7 +56,7 @@ const Carouselslider = () => {
   };
 
   return (
-    <div className="w-full h-screen overflow-hidden relative">
+    <div className="w-full h-full overflow-hidden relative">
       <AnimatePresence initial={false} custom={direction}>
         {slides.map((slide, index) => (
           index === current && (
@@ -95,14 +95,6 @@ const Carouselslider = () => {
                 >
                   {slide.tag}
                 </motion.p>
-                {/* <motion.button
-                  className="bg-gradient-to-r from-red-500 to-orange-500 shadow-lg py-1 px-2 md:py-2 md:px-4 rounded-md text-xs md:text-sm mt-2"
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ delay: 1.5 }}
-                >
-                  JOIN US
-                </motion.button> */}
               </div>
             </motion.div>
           )
