@@ -104,7 +104,7 @@ const About = () => (
 
    
      
-    <div className='bg-gradient-to-r from-blue-400 to-teal-400 p-10 mt-10'>
+    <div className='bg-gradient-to-r from-blue-400 to-red-400 p-10 mt-10'>
     <Title style={{color:'white'}} ta="center" order={2} >
       OUR MANAGEMENT TEAM
     </Title>

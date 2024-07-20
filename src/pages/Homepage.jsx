@@ -32,10 +32,10 @@ const Homepage = () => {
    
      {/* <HeroSection/> */}
      <div className="  h-screen  flex flex-col md:flex-row">
-      <div className="w-full md:w-3/4 h-2/4 md:h-full">
+      <div className="w-full md:w-3/4 h-2/5 md:h-full">
         <Carouselslider />
       </div>
-      <div className="w-full md:w-1/4 h-2/4 md:h-full">
+      <div className="w-full md:w-1/4 h-3/5 md:h-full">
         <VerticalScrollingAnnouncement />
       </div>
     </div>

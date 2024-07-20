@@ -15,34 +15,15 @@
     }
   }
   
-  /* Custom keyframes for horizontal scrolling */
-  @keyframes horizontalScroll {
+  @keyframes verticalScroll {
     0% {
-      transform: translateX(0);
+      transform: translateY(0);
     }
     100% {
-      transform: translateX(-100%);
-    }
-  }
-  
-  /* Custom keyframes for horizontal scrolling in reverse */
-  @keyframes horizontalScrollReverse {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(100%);
+      transform: translateY(-100%);
     }
   }
   
   .animate-verticalScroll {
     animation: verticalScroll 30s linear infinite;
-  }
-  
-  .animate-horizontalScroll {
-    animation: horizontalScroll 30s linear infinite;
-  }
-  
-  .animate-horizontalScrollReverse {
-    animation: horizontalScrollReverse 30s linear infinite;
   }
