@@ -26,22 +26,24 @@ const ImpactMetrics = () => {
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
         >
           {metrics.map((metric) => (
-            <motion.div
-              key={metric.id}
-              variants={cardVariants}
-              className="bg-gradient-to-r from-red-400 to-blue-400 p-6 rounded-xl shadow-lg hover:shadow-2xl transform transition duration-300 ease-in-out"
-            >
-              <div className="text-6xl mb-4">{metric.icon}</div>
-              <div className="text-4xl font-extrabold text-white mb-2">
-                {metric.value}
-              </div>
-              <div className="text-2xl font-medium text-white">
-                {metric.label}
-              </div>
-            </motion.div>
+          <motion.div
+          key={metric.id}
+          variants={cardVariants}
+          className="hover:text-white  transform transition duration-300 ease-in-out"
+        >
+          <div className="text-6xl mb-4 ">{metric.icon}</div>
+          <div className="text-4xl font-extrabold  mb-2">
+            {metric.value}
+          </div>
+          <div className="text-2xl font-medium ">
+            {metric.label}
+          </div>
+        </motion.div>
+          
           ))}
         </motion.div>
       </div>
+      
     </section>
   );
 };

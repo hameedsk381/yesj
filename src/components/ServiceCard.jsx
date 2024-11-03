@@ -8,15 +8,15 @@ const cardVariants = {
 
 const ServiceCard = ({ service }) => {
   return (
-    <motion.div
+  <motion.div
       initial="hidden"
       animate="visible"
       variants={cardVariants}
-      className="bg-gradient-to-r from-red-400 to-blue-500 p-6 rounded-xl shadow-lg hover:shadow-2xl transform transition duration-300 ease-in-out"
+      className=" p-6 transform transition duration-300 ease-in-out hover:text-white"
     >
       <div className="text-6xl mb-4">{service.icon}</div>
-      <h3 className="text-2xl font-bold text-white mb-2">{service.title}</h3>
-      <p className="text-white">{service.description}</p>
+      <h3 className="text-2xl font-bold  mb-2">{service.title}</h3>
+      <p className='mb-4'>{service.description}</p>
     </motion.div>
   );
 };

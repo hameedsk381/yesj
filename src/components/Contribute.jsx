@@ -1,6 +1,6 @@
 import React from 'react';
 import DonationDetails from './DonationDetails';
-import ourgoals from '../assets/our-goals-bg.jpg'
+
 const Contribute = () => {
   return (
     <div className="min-h-screen bg-gradient-to-r from-red-400 to-blue-400 text-gray-900">

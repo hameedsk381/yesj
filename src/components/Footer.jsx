@@ -71,7 +71,7 @@ function Footer() {
           © 2024 YesJ. All rights reserved.
         </Text>
        <p className='text-lg font-semibold'>
-        Website developed by <span className=' text-2xl' style={{fontWeight:'bolder'}}><span className='text-red-500'>In</span>clusiv<span className='text-blue-500'>IT</span></span>
+        Website developed by FOSS ANDHRA FOUNDATION
        </p>
       </Container>
     </footer>

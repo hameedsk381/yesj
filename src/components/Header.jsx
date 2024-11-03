@@ -5,7 +5,7 @@ import { Link, Outlet } from 'react-router-dom';
 import Login from '../pages/Login';
 import Register from './Register';
 import classes from './HeaderTabs.module.css';
-
+import logo1 from '../assets/YESJ_Logo_Black.png'
 const tabs = [
   'Home',
   'About Us',
@@ -81,7 +81,7 @@ function Header() {
           >
             <Tabs.List>{items}</Tabs.List>
           </Tabs>
-          {login ? <ProfileMenu /> : <Button variant="gradient" gradient={{ from: 'blue', to: 'pink' }} onClick={open}>Login / Register</Button>}
+          {/* {login ? <ProfileMenu /> : <Button variant="gradient" gradient={{ from: 'blue', to: 'pink' }} onClick={open}>Login / Register</Button>} */}
         </nav>
         <div className="flex md:hidden justify-between w-full pb-1 pr-3">
           <Avatar src="YESJ_Logo_Black.png" alt="Yesj" radius="xl" size="3.5rem" />
@@ -91,7 +91,7 @@ function Header() {
 
       <div className="hidden md:block">
         <div className={classes.avatarContainer}>
-          <Avatar src="YESJ_Logo_Black.png" alt="Yesj" radius="xl" size="5.5rem" />
+          <Avatar src={logo1} alt="Yesj" radius="xl" size="5.5rem" />
         </div>
       </div>
 

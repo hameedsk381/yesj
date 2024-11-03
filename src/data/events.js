@@ -51,7 +51,7 @@ const events = [
       ],
     }, {
         id: 1,
-        imageUrl: "https://res.cloudinary.com/dwlbneeh4/image/upload/v1721133859/stock-photo-crowd-partying-stage-lights-live-concert-summer-music-festival-2297236461_yqakxn.jpg",
+        imageUrl: "https://bafkreib735rfajy6duy22idxwiobwimpxaxs3gju4ymz5uzdhwg2n3lgoe.ipfs.flk-ipfs.xyz/",
         title: "PERSONAL ENHANCEMENT PROGRAMMES (PEP)",
         problem: [
           "Many young people lack the confidence and the necessary skills to navigate the complexities of life, both societal and psychological.",
@@ -95,10 +95,10 @@ const events = [
           { id: 2, count: 1050, description: "teachers of 21 institutions have benefitted." }
         ],
         imageList: [
-          { id: 1, imageUrl: "https://res.cloudinary.com/dwlbneeh4/image/upload/v1721133859/medium-shot-people-celebrating-eid-al-fitr_23-2151205085_wirli7.jpg" },
-          { id: 2, imageUrl: "https://res.cloudinary.com/dwlbneeh4/image/upload/v1721133859/little-children-trick-treating-halloween_53876-49127_ib9hgk.jpg" },
-          { id: 3, imageUrl: "https://res.cloudinary.com/dwlbneeh4/image/upload/v1721133859/portrait-male-friends-sharing-affectionate-moment-friendship_23-2151310371_zany6g.avif" },
-          { id: 4, imageUrl: "https://res.cloudinary.com/dwlbneeh4/image/upload/v1721133859/medium-shot-people-celebrating-eid-al-fitr_23-2151205085_wirli7.jpg" }
+          { id: 1, imageUrl: "https://bafkreielhvmljrgigm2v3bmpm3krf7z6w2e5wcpsvhtaicqwxibjbz46nu.ipfs.flk-ipfs.xyz" },
+          { id: 2, imageUrl: "https://bafkreidzjzsjweajxnagrqnk534mma7tabqd33pdkds6vluwa364einxtq.ipfs.flk-ipfs.xyz" },
+          { id: 3, imageUrl: "https://bafkreifvlukls2lifxnxomkgxpmxoqp2uhbrehznb7h7hs7kpw2mlbjmla.ipfs.flk-ipfs.xyz" },
+          { id: 4, imageUrl: "https://bafkreieg2kqabki5smpsczz4abzuoc536y2c5b7fjyhhhowxc75rsufusm.ipfs.flk-ipfs.xyz" }
         ],
         testimonials: [
           { quote: '"I am very excited to be a part of MAGIC Youth. It was a blessing to be a part of the Self-Motivation and Setting Up Goals workshop."', participant: 'Venkatesh', role: 'Student', avatar: 'https://res.cloudinary.com/dwlbneeh4/image/upload/v1721135978/cheerful-indian-businessman-smiling-closeup-portrait-jobs-career-campaign_53876-129417_sdjaog.avif' },

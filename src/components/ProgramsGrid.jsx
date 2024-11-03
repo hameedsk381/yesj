@@ -1,5 +1,5 @@
 import {  SimpleGrid } from "@mantine/core";
-import eachone from '../assets/eachone copy.png'
+import eachone from '../assets/eachone.png'
 import joyone from '../assets/joylogo.png'
 import ogod from '../assets/Ogod_logo.png'
 import yuva from '../assets/Yuvotsavaalu.png'

@@ -77,7 +77,7 @@ function EventDetails() {
 }
 
 const Section = ({ title, content }) => (
-  <div className="mb-8 p-6 bg-white shadow-lg rounded-lg transition-transform transform hover:scale-105">
+  <div className="mb-8 p-6 bg-white  rounded-lg transition-transform transform hover:scale-105">
     <h2 className="text-3xl text-center text-red-500 font-bold mb-4">{title}</h2>
     <ul className="list-disc list-inside space-y-2">
       {content.map((item, index) => (

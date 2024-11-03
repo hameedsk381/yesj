@@ -1,5 +1,5 @@
 import React from 'react';
-// import qrCode from '../assets/qr-code.png'; // Make sure to replace with the actual path to your QR code image
+// import qrCode from 'qr-code.png'; // Make sure to replace with the actual path to your QR code image
 
 const DonationDetails = () => {
   return (

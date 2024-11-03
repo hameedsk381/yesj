@@ -8,13 +8,13 @@ import managementTeam from '../assets/team'; // Assume you have team images in t
 
 const management = [
   {
-    name: 'John Doe',
-    title: 'CEO',
+    name: 'Fr Bala Bollineni',
+    title: 'Founder & Director',
     image: managementTeam.johndoe, // Assume you have a johndoe.png image in the assets folder
   },
   {
-    name: 'Jane Smith',
-    title: 'CTO',
+    name: 'Pity parker',
+    title: 'Programmes Cordinator',
     image: managementTeam.janesmith, // Assume you have a janesmith.png image in the assets folder
   },
   // Add more team members here...
@@ -52,10 +52,10 @@ const items = features.map((feature) => (
 ));
 
 const ManagementTeamItem = ({ name, title, image }) => (
-  <div className="flex flex-col items-center text-center p-4 bg-gradient-to-r from-blue-500 to-red-500 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+  <div className="flex flex-col items-center text-center p-4  rounded-lg  transition-shadow duration-300">
     <Avatar src={image} alt={name} size={120} className="mb-4" />
-    <h3 className="text-lg text-white font-semibold">{name}</h3>
-    <p className="text-white mt-2">{title}</p>
+    <h3 className="text-xl  font-semibold">{name}</h3>
+    <p className="text-gray-500 text-sm mt-2">{title}</p>
   </div>
 );
 

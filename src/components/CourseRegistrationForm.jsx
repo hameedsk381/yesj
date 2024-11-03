@@ -15,6 +15,9 @@ const CourseRegistrationForm = () => {
       courseAppearingFor: '',
       termsAccepted: false,
       isStudying: 'no',
+      howDidYouKnowAboutCourse: '',
+      PCown: false,
+      preferredBatch: '',
     },
 
     validate: {
@@ -27,8 +30,26 @@ const CourseRegistrationForm = () => {
       institutionName: (value) => (form.values.isStudying === 'yes' && !value ? 'Please enter your institution name' : null),
       courseAppearingFor: (value) => (value ? null : 'Please enter the course you are appearing for'),
       termsAccepted: (value) => (value ? null : 'You must accept the terms and conditions'),
+      howDidYouKnowAboutCourse: (value) => (value ? null : 'Please select how you knew about the course'),
+      PCown: (value) => (value ? null : 'Do you have laptop/PC'),
+      preferredBatch: (value) => (value ? null : 'Please select your preferred batch'),
     },
   });
+
+  const [isStudying, setIsStudying] = useState(form.values.isStudying);
+
+  const handleSubmit = (values) => {
+    fetch('https://example.com/api/registration', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(values),
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+  };
 
   return (
     <Container>
@@ -36,7 +57,7 @@ const CourseRegistrationForm = () => {
       <Title ta="center" mb={20} size="h1" style={{ fontSize: 'clamp(29px, 5vw, 42px)' }}>
         Course Registration Form
       </Title>
-      <form onSubmit={form.onSubmit((values) => console.log(values))}>
+      <form onSubmit={form.onSubmit(handleSubmit)}>
         <Grid>
           <Grid.Col span={{ base: 12, md: 6, lg: 4 }}>
             <TextInput mt="sm" label="Name" placeholder="Your name" {...form.getInputProps('name')} />
@@ -116,6 +137,39 @@ const CourseRegistrationForm = () => {
            
           )}
          
+          <Grid.Col span={{ base: 12, md: 6, lg: 4 }}>
+            <Select
+              mt="sm"
+              label="How did you know about the course?"
+              placeholder="Select an option"
+              data={['Online', 'Friends', 'College', 'Other']}
+              {...form.getInputProps('howDidYouKnowAboutCourse')}
+            />
+          </Grid.Col>
+         
+          <Grid.Col span={{ base: 12, md: 6, lg: 4 }}>
+            <Select
+              mt="sm"
+              label="Preferred Batch"
+              placeholder="Select your preferred batch"
+              data={['3pm to 4 pm', '4pm to 5 pm']}
+              {...form.getInputProps('preferredBatch')}
+            />
+          </Grid.Col>
+        
+          <Grid.Col span={12}>
+            <Radio.Group withAsterisk
+              mt="sm"
+              label="Do you have laptop/PC?"
+              value={form.values.PCown ? 'yes' : 'no'}
+              onChange={(value) => form.setFieldValue('PCown', value === 'yes')}
+            >
+              <Group mt="xs">
+                <Radio value="yes" label="Yes" />
+                <Radio value="no" label="No" />
+              </Group>
+            </Radio.Group>
+          </Grid.Col>
           <Grid.Col span={12}>
             <Checkbox
               mt="sm"
@@ -124,8 +178,9 @@ const CourseRegistrationForm = () => {
             />
           </Grid.Col>
         </Grid>
+        
         <Group position="right" mt="md">
-          <Button type="submit">Submit</Button>
+          <Button type="submit" m={'auto'} mt={10}>Submit</Button>
         </Group>
       </form>
     </Container>
