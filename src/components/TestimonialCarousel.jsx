@@ -82,13 +82,13 @@ const TestimonialCarousel = () => {
     <section className="py-16 bg-gradient-to-r from-blue-100 to-teal-100">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-gray-800">Testimonials</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 px-4 md:grid-cols-2 gap-8">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-xl shadow-lg flex flex-col items-center"
+              className="bg-white p-6 rounded-xl gap-3 shadow-lg flex flex-col items-center"
             >
-              <FaQuoteRight className="text-indigo-500 text-3xl mb-4" />
+              <FaQuoteRight className="text-indigo-500 text-4xl mb-4" />
               <p className="text-gray-700 mb-6">{testimonial.quote}</p>
               <div className="flex items-center">
                 <img src={testimonial.image} alt={`Participant ${index + 1}`} className="w-16 h-16 rounded-full mr-4 object-cover" />

@@ -1,18 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import logo1 from '../assets/YESJ_Logo_Black.png'
-const donors = [
-  { name: 'John Doe', logo: logo1 },
-  { name: 'Jane Smith', logo: logo1 },
-  { name: 'ACME Corp', logo: logo1 },
-  { name: 'Global Inc.', logo: logo1 },
-  { name: 'Tech Solutions', logo: logo1 },
-  { name: 'Innovate LLC', logo: logo1 },
-  { name: 'Future Ventures', logo: logo1 },
-  { name: 'Green Earth', logo: logo1 },
-  { name: 'Skyline Enterprises', logo: logo1 },
-  { name: 'Blue Ocean', logo: logo1 },
-];
+import donors from '../imagesfiles/donars';
 
 const DonorRecognition = () => {
   return (
@@ -28,11 +16,11 @@ const DonorRecognition = () => {
             className="flex space-x-8"
           >
             {donors.map((donor, index) => (
-              <div key={index} className="inline-block text-center">
+              <div key={index} className="flex flex-col  text-center">
                 <img 
                   src={donor.logo} 
                   alt={donor.name} 
-                  className="object-cover mx-4 rounded-full " 
+                  className="object-cover mx-4 rounded-full" 
                 />
                 <p className="mt-2 text-sm md:text-base lg:text-lg font-medium text-gray-700">{donor.name}</p>
               </div>

@@ -11,8 +11,6 @@ export default function Program({title,desc,poster,eventnum}) {
       <Text size="md" fw={500} mt="md" ta={'center'}>
       {desc}
       </Text>
-     
-
   </Box>
     </Paper>
   );
