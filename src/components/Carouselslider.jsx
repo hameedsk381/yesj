@@ -1,19 +1,23 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import slider1 from '../assets/slider-01.jpg'
+import slider2 from '../assets/slider-2.jpg'
+import slider3 from '../assets/slider-3.jpg'
+
 
 const slides = [
   {
-    image: 'https://yesj.org/assets/images/slider-01.jpg',
+    image: slider1,
     quote: 'I have dreams',
     tag: 'ENCOURAGE'
   },
   {
-    image: 'https://yesj.org/assets/images/slider-2.jpg',
+    image: slider2,
     quote: 'Together, we make a',
     tag: 'DIFFERENCE'
   },
   {
-    image: 'https://yesj.org/assets/images/slider-3.jpg',
+    image: slider3,
     quote: 'Empower',
     tag: 'COMMUNITIES'
   },

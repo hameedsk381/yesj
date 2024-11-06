@@ -4,54 +4,62 @@ import joyone from '../assets/joylogo.png'
 import ogod from '../assets/Ogod_logo.png'
 import yuva from '../assets/Yuvotsavaalu.png'
 import Program from "./Program";
+import p1 from '../assets/p1.png'
+import p2 from '../assets/p2.png'
+import p3 from '../assets/p3.png'
+import p4 from '../assets/p4.png'
+import p5 from '../assets/p5.png'
+import p6 from '../assets/p6.png'
+import p7 from '../assets/p7.png'
+
 const programs = [
   {
     id: 1,
     title: 'PEP',
     description: 'Personal Enhancement Programmes',
-    imageUrl: 'https://yesj.org/assets/images/p1.png', // Replace with the actual path to the PEP image
+    imageUrl: p1, // Replace with the actual path to the PEP image
     hoverColor: '#a2d5f2', // Example hover color, replace with actual color
   },
   {
     id: 2,
     title: 'MAGIC',
     description: 'Men & Women Aiming at Greater Initiatives for Change',
-    imageUrl: 'https://yesj.org/assets/images/p2.png', // Replace with the actual path to the MAGIC image
+    imageUrl: p2, // Replace with the actual path to the MAGIC image
     hoverColor: '#fcbad3', // Example hover color, replace with actual color
   },
   {
     id: 3,
     title: 'MuST',
     description: 'Multi Skill Training',
-    imageUrl: 'https://yesj.org/assets/images/p3.png', // Replace with the actual path to the MuST image
+    imageUrl: p3, // Replace with the actual path to the MuST image
     hoverColor: '#ffffd1', // Example hover color, replace with actual color
   },
   {
     id: 4,
     title: 'SS',
     description: 'Summer Shapes',
-    imageUrl: 'https://yesj.org/assets/images/p4.png', // Replace with the actual path to the SS image
+    imageUrl: p4, // Replace with the actual path to the SS image
     hoverColor: '#c1e1c5', // Example hover color, replace with actual color
   },
   {
     id: 5,
     title: 'Yuvaotsavaalu',
     description: 'YES-I\'s Youth Festival',
-    imageUrl: 'https://yesj.org/assets/images/p5.png', // Replace with the actual path to the Yuvaotsavaalu image
+    imageUrl: p5, // Replace with the actual path to the Yuvaotsavaalu image
     hoverColor: '#beebe9', // Example hover color, replace with actual color
   },
   {
     id: 6,
     title: 'VIP',
     description: 'Voluntary Immersion Programme',
-    imageUrl: 'https://yesj.org/assets/images/p6.png', // Replace with the actual path to the VIP image
+    imageUrl: p6, // Replace with the actual path to the VIP image
     hoverColor: '#fde2e4', // Example hover color, replace with actual color
   },
   {
     id: 7,
     title: 'SSP',
     description: 'Scholar support Programme',
-    imageUrl: 'https://yesj.org/assets/images/p7.png', // Replace with the actual path to the VIP image
+    imageUrl: p7, // Replace with the actual path to the VIP image
     hoverColor: '#fde2e4', // Example hover color, replace with actual color
   },{
     id: 8,
