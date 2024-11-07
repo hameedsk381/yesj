@@ -25,6 +25,7 @@ import ContactSection from '../components/ContactSection'
 import Chatbot from '../components/Chatbot'
 import VerticalScrollingAnnouncement from '../components/VerticalScrollingAnnouncement'
 import { CardSpotlight } from '../components/card-spotlight'
+import SplineBackground from '../components/SplineBackground'
 // import CardsCarousel from '../components/Carousel'
 
 const Homepage = () => {
@@ -41,14 +42,35 @@ const Homepage = () => {
       </div>
     </div>
      {/* <About/> */}
+    <div className="relative overflow-hidden min-h-screen">
+      
+      {/* Spline Background that expands to content height */}
+      <div className="absolute z-10 inset-0 w-full h-full">
+        <SplineBackground className="spline-background" />
+      </div>
+
+      {/* Foreground content */}
+      <div className="relative space-y-10">
+        <ImpactMetrics />
+        <ServicesOverview />
+      </div>
+      
+    </div>
+    {/* <marquee width="60%" direction="up" height="100px">
+This is a sample scrolling text that has scrolls in the upper direction.
+</marquee> */}
+
+
+{/* 
      <CardSpotlight>
      <ImpactMetrics/>
      <ServicesOverview/>
-     </CardSpotlight>
+     </CardSpotlight> */}
      <DynamicProgrammes/>
      <DonationBanner/>
      
      <DonorRecognition/>
+     {/* <Testimonials /> */}
      <TestimonialCarousel/>
      <NewsLetter/>
         <SuccessStories />

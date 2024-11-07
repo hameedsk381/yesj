@@ -27,3 +27,8 @@
   .animate-verticalScroll {
     animation: verticalScroll 30s linear infinite;
   }
+  .testimonial_box{
+    min-width: 200px;
+    width: 100%;
+    flex: 250px 1 0;  
+  }

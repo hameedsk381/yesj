@@ -66,3 +66,11 @@ export const CardSpotlight = ({
     </div>)
   );
 };
+
+// import Spline from '@splinetool/react-spline';
+
+// export default function App() {
+//   return (
+//     <Spline scene="https://prod.spline.design/fZhvp4VyuN3QJN1G/scene.splinecode" />
+//   );
+// }

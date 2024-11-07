@@ -29,7 +29,7 @@ const ImpactMetrics = () => {
           <motion.div
           key={metric.id}
           variants={cardVariants}
-          className="hover:text-white  transform transition duration-300 ease-in-out"
+          className="hover:text-white transform transition duration-300 ease-in-out"
         >
           <div className="text-6xl mb-4 ">{metric.icon}</div>
           <div className="text-4xl font-extrabold  mb-2">

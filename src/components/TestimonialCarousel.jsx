@@ -2,30 +2,33 @@ import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaQuoteRight } from 'react-icons/fa';
 import { useMediaQuery } from '@mantine/hooks';
+import team1 from "../assets/team-1.jpg"
+import team2  from "../assets/team-2.jpg"
+
 
 const testimonials = [
   {
     name: 'John Doe',
-    quote: 'This experience helped me to be more grateful to God for wss and thank more.',
-    image: 'https://via.placeholder.com/150',
+    quote: 'Volunteering here has been an amazing experience. Thisorking on self-improvement so that I can complain less and thank more.',
+    image: team1,
     role: 'Software Developer'
   },
   {
     name: 'Jane Smith',
-    quote: 'I am so grateful for the support and opportunities provided. This experience helpe',
-    image: 'https://via.placeholder.com/150',
+    quote: 'Volunteering here has been an amazing experience. Thisorking on self-improvement so that I can complain less and thank more.',
+    image: team2,
     role: 'Software Developer'
   },
   {
     name: 'Alice Johnson',
     quote: 'Volunteering here has been an amazing experience. Thisorking on self-improvement so that I can complain less and thank more.',
-    image: 'https://via.placeholder.com/150',
+    image: team1,
     role: 'Software Developer'
   },
   {
     name: 'Robert Brown',
     quote: 'The opportunities provided here have been life-changing. I am incredibly thankful for the experiences and the community.',
-    image: 'https://via.placeholder.com/150',
+    image: team2,
     role: 'Software Engineer'
   }
 ];
@@ -79,24 +82,28 @@ const TestimonialCarousel = () => {
   }
 
   return (
-    <section className="py-16 bg-gradient-to-r from-blue-100 to-teal-100">
+    <section className="py-16 bg-gradient-to-tr from-sky-200 to-blue-600">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-gray-800">Testimonials</h2>
-        <div className="grid grid-cols-1 px-4 md:grid-cols-2 gap-8">
+        <div className=" flex gap-4 testimonial_box">
           {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="bg-white p-6 rounded-xl gap-3 shadow-lg flex flex-col items-center"
-            >
-              <FaQuoteRight className="text-indigo-500 text-4xl mb-4" />
-              <p className="text-gray-700 mb-6">{testimonial.quote}</p>
-              <div className="flex items-center">
-                <img src={testimonial.image} alt={`Participant ${index + 1}`} className="w-16 h-16 rounded-full mr-4 object-cover" />
-                <div>
-                  <p className="text-indigo-600 font-semibold">{testimonial.name}</p>
-                  <p className="text-gray-500 text-sm">{testimonial.role}</p>
-                </div>
+            <div key={testimonial.name} className="bg-transparent border border-2 border-blue-900 rounded-md">
+            <div className="p-6 space-y-4">
+              <div>
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  fill
+                  className="object-cover w-full h-[180px] rounded-lg"
+                />
               </div>
+              <FaQuoteRight className="w-8 h-8 text-[#003366]" />
+              <p className="text-sm text-gray-900">{testimonial.quote}</p>
+              <div>
+                <h3 className="font-semibold">{testimonial.name}</h3>
+                <p className="text-sm text-gray-700">{testimonial.role}</p>
+              </div>
+            </div>
             </div>
           ))}
         </div>

@@ -10,7 +10,7 @@ const announcements = [
 
 const VerticalScrollingAnnouncement = () => {
   return (
-    <div className="relative w-full h-full bg-gradient-to-b from-gray-800 to-gray-900 text-white overflow-hidden">
+    <div className="relative w-full h-full bg-gradient-to-b from-gray-400 to-gray-900 text-white overflow-hidden">
       {/* <div className="absolute top-0 w-full bg-white text-black py-4 text-center text-xl font-bold shadow-lg z-10">
         Announcements
       </div> */}
