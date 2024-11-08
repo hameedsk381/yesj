@@ -1,15 +1,28 @@
-import React from 'react';
-import DonationDetails from './DonationDetails';
+import React from "react";
+import DonationDetails from "./DonationDetails";
+import background from "../assets/donate-background.jpg";
 
 const Contribute = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-r from-red-400 to-blue-400 text-gray-900">
-         {/* <img src={ourgoals} alt="our goals" /> */}
+    <div
+      className="min-h-screen  text-gray-900"
+      style={{
+        backgroundImage: `url(${background})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* <img src={ourgoals} alt="our goals" /> */}
       {/* Main Section */}
       <main className="container mx-auto py-16 px-4">
         <section className="text-center mb-16">
-          <h1 className="text-3xl md:text-3xl lg:text-4xl font-bold text-white mb-4">Make a Difference Today</h1>
-          <p className="text-md md:text-lg lg:text-xl text-white mb-2">Your donation can change lives. Every contribution, no matter how small, helps us create a better world.</p>
+          <h1 className="text-3xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            Make a Difference Today
+          </h1>
+          <p className="text-md md:text-lg lg:text-xl text-gray-600 mb-2">
+            Your donation can change lives. Every contribution, no matter how
+            small, helps us create a better world.
+          </p>
         </section>
 
         {/* Donation Form */}
@@ -53,22 +66,32 @@ const Contribute = () => {
             <button type="submit" className="w-full bg-blue-600 text-white p-4 rounded-md font-bold hover:bg-blue-700">Donate</button>
           </form>
         </section> */}
-<DonationDetails/>
+        <DonationDetails />
         {/* Testimonials */}
         <section className="mt-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-white">What Our Donors Say</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-rose-400">
+            What Our Donors Say
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-white p-6 rounded-lg shadow-lg">
-              <p className="text-gray-700">"This organization is doing an amazing job!"</p>
+              <p className="text-gray-700">
+                "This organization is doing an amazing job!"
+              </p>
               <p className="text-gray-900 font-semibold mt-4">- John Doe</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-lg">
-              <p className="text-gray-700">"I am happy to support such a worthy cause."</p>
+              <p className="text-gray-700">
+                "I am happy to support such a worthy cause."
+              </p>
               <p className="text-gray-900 font-semibold mt-4">- Jane Smith</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-lg">
-              <p className="text-gray-700">"Making a donation was easy and the impact is visible."</p>
-              <p className="text-gray-900 font-semibold mt-4">- Emily Johnson</p>
+              <p className="text-gray-700">
+                "Making a donation was easy and the impact is visible."
+              </p>
+              <p className="text-gray-900 font-semibold mt-4">
+                - Emily Johnson
+              </p>
             </div>
           </div>
         </section>

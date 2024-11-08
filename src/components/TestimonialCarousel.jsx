@@ -82,7 +82,7 @@ const TestimonialCarousel = () => {
   }
 
   return (
-    <section className="py-16 bg-gradient-to-tr from-sky-200 to-blue-600">
+    <section className="py-16 bg-gradient-to-tr from-sky-50 to-blue-500">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-gray-800">Testimonials</h2>
         <div className=" flex gap-4 testimonial_box">

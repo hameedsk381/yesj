@@ -4,7 +4,7 @@ import React from 'react';
 const DonationDetails = () => {
   return (
     <div className="container mx-auto pb-12 px-4 sm:px-6 lg:px-8">
-      <h2 className="text-3xl font-extrabold text-center text-white mb-8">
+      <h2 className="text-3xl font-extrabold text-center text-gray-800 mb-8">
         Donation Contact Details
       </h2>
       <div className="bg-white shadow-md max-w-[400px] m-auto rounded-lg p-6 space-y-6">
