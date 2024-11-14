@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import textbackground from "../assets/text-background.png"
 import Program from "./Program";
@@ -63,28 +63,9 @@ const programs = [
 ];
 
 const DynamicProgrammes = () => {
-  const containerRef = useRef(null);
-
-  const scrollLeft = () => {
-    if (containerRef.current) {
-      containerRef.current.scrollBy({ left: -350, behavior: "smooth" });
-    }
-  };
-
-  const scrollRight = () => {
-    if (containerRef.current) {
-      containerRef.current.scrollBy({ left: 350, behavior: "smooth" });
-    }
-  };
-
   return (
     <section
       className="py-16 bg-[#f9fafc]"
-      // style={{
-      //   backgroundImage:
-      //     "url('https://salient.tailwindui.com/_next/static/media/background-faqs.55d2e36a.jpg')",
-      //   backgroundSize: "cover",
-      // }}
     >
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-4xl md:text-5xl text-rose-600 font-bold mb-12" style={{ backgroundImage: `url(${textbackground})`, backgroundClip:"text", color:'transparent'}}>
@@ -92,24 +73,17 @@ const DynamicProgrammes = () => {
         </h2>
         <div className="relative">
           <div
-            // ref={containerRef}
-            className="flex overflow-x-hidden space-x-3 pb-4"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
           >
-            <motion.div
-              animate={{ x: ["100%", "-100%"] }}
-              transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-              className="flex space-x-8"
-            >
-              {programs.map((item, index) => (
-                <Program
-                  key={item.id}
-                  title={item.title}
-                  desc={item.description}
-                  poster={item.imageUrl}
-                  eventnum={index + 1}
-                />
-              ))}
-            </motion.div>
+            {programs.map((item, index) => (
+              <Program
+                key={item.id}
+                title={item.title}
+                desc={item.description}
+                poster={item.imageUrl}
+                eventnum={index + 1}
+              />
+            ))}
           </div>
         </div>
       </div>

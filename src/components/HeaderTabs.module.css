@@ -37,10 +37,12 @@ padding-left: 5%;
     &::before {
       display: none;
     }
+  
   }
   
   .tab {
-    font-weight: 600;
+    font-weight: 700;
+    font-size: large;
     height: rem(38);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: transparent;

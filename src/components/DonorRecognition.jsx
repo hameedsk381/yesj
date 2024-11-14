@@ -8,33 +8,20 @@ const DonorRecognition = () => {
     <section className="py-16">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-rose-600" style={{ backgroundImage: `url(${textbackground})`, backgroundClip:"text", color:'transparent'}}>
-          Our Donors
+          Our Collaborators
         </h2>
-
-        {/* Scrolling Marquee */}
-        <div className="overflow-x-hidden whitespace-nowrap mb-12">
-          <motion.div
-            animate={{ x: ["100%", "-100%"] }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="flex space-x-8"
-          >
-            {donors.map((donor, index) => (
-              <div key={index} className="flex flex-col  text-center">
-                <img
-                  src={donor.logo}
-                  alt={donor.name}
-                  className="object-cover mx-4 rounded-full"
-                />
-                <p className="mt-2 text-sm md:text-base lg:text-lg font-medium text-gray-700">
-                  {donor.name}
-                </p>
-              </div>
-            ))}
-          </motion.div>
+        <div className="flex flex-wrap justify-center m-auto  lg:gap-10 container max-w-4xl">
+          {donors.map((donor, index) => (
+            <img
+              key={index}
+              src={donor.logo}
+              alt={donor.name}
+              className="object-cover mx-4 rounded-full w-12 h-12 md:w-24 md:h-24 mb-6"
+            />
+          ))}
         </div>
       </div>
     </section>
   );
 };
-
 export default DonorRecognition;

@@ -11,6 +11,7 @@ import Carouselslider from "../components/Carouselslider";
 import About from "../components/About";
 import NewsLetter from "../components/NewsLetter";
 import Contact from "../components/Contact";
+import captions from '../assets/captions.jpg'
 import {
   BackgroundImage,
   SimpleGrid,
@@ -44,10 +45,10 @@ const Homepage = () => {
     <div>
       {/* <HeroSection/> */}
       <div className="  h-screen  flex flex-col md:flex-row">
-        <div className="w-full md:w-3/4 h-2/6 md:h-full">
+        <div className="w-full md:w-3/4 h-1/2 md:h-full">
           <Carouselslider />
         </div>
-        <div className="w-full md:w-1/4 h-4/6 md:h-full">
+        <div className="w-full md:w-1/4 h-1/2 md:h-full">
           <VerticalScrollingAnnouncement />
         </div>
       </div>
@@ -63,6 +64,8 @@ const Homepage = () => {
         {/* <div className="absolute z-10 inset-0 w-full h-full">
           <SplineBackground className="spline-background" />
         </div> */}
+        <img src={captions} alt="Yesj-values" style={{width: '100%', height: 'auto'}} className="mb-10" />
+
 
         <div className="relative space-y-10">
           <ImpactMetrics />
@@ -78,7 +81,7 @@ This is a sample scrolling text that has scrolls in the upper direction.
      <ImpactMetrics/>
      <ServicesOverview/>
      </CardSpotlight> */}
-      <DynamicProgrammes />
+      {/* <DynamicProgrammes /> */}
       <div
         style={{
           backgroundImage:
@@ -92,7 +95,7 @@ This is a sample scrolling text that has scrolls in the upper direction.
       </div>
 
       {/* <Testimonials /> */}
-      <TestimonialCarousel />
+      {/* <TestimonialCarousel /> */}
       <NewsLetter />
       <SuccessStories />
 

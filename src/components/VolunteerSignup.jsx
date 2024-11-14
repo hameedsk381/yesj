@@ -27,7 +27,7 @@ const VolunteerSignup = () => {
     <>
       <button
         onClick={() => setOpened(true)}
-        className="bg-rose-300 w-fit text-rose-600 font-bold text-md px-3 py-2 rounded hover:bg-rose-500 hover:text-white"
+        className=" w-fit  font-bold text-md px-3 py-2 rounded bg-rose-500 text-white"
         size="md"
         style={{ margin: "2rem 0" }}
       >

@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import textbackground from "../assets/text-background.png"
 
 const metrics = [
-  { id: 1, label: 'People Helped', value: '10,000+', icon: '👥' },
-  { id: 2, label: 'Projects Completed', value: '150+', icon: '📊' },
-  { id: 3, label: 'Funds Raised', value: '$1,000,000+', icon: '💰' },
+  { id: 1, label: 'Comprehensive Programmes', value: '10+', icon: '👥' },
+  { id: 2, label: 'Youth Reached Out', value: '50,000+', icon: '📊' },
+  { id: 3, label: 'Youth Leaders Trained', value: '3000+', icon: '💰' },
 ];
 
 const cardVariants = {

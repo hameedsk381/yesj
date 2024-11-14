@@ -10,8 +10,10 @@ const tabs = [
   'Home',
   'About Us',
   'Programmes',
-  'Yesj Echos',
-  'Media Gallery',
+  'YESJ Echoes',
+  'Gallery',
+  'Courses',
+  'Events',
   'Contribute',
 ];
 
@@ -32,7 +34,7 @@ function Header() {
   const items = tabs.map((tab) => {
     const to = tab === 'Home' ? '/' : `/${tab.replace(/\s+/g, '').toLowerCase()}`;
     return (
-      <Tabs.Tab value={tab} key={tab} component={Link} to={to} onClick={closeDrawer}>
+      <Tabs.Tab  value={tab} key={tab} component={Link} to={to} onClick={closeDrawer}>
         {tab}
       </Tabs.Tab>
     );
@@ -79,7 +81,7 @@ function Header() {
               tab: classes.tab,
             }}
           >
-            <Tabs.List>{items}</Tabs.List>
+            <Tabs.List >{items}</Tabs.List>
           </Tabs>
           {/* {login ? <ProfileMenu /> : <Button variant="gradient" gradient={{ from: 'blue', to: 'pink' }} onClick={open}>Login / Register</Button>} */}
         </nav>
