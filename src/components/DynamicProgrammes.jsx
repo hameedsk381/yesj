@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
+import textbackground from "../assets/text-background.png"
 import Program from "./Program";
 import p1 from "../assets/p1.png";
 import p2 from "../assets/p2.png";
@@ -78,15 +79,17 @@ const DynamicProgrammes = () => {
 
   return (
     <section
-      className="py-16"
-      style={{
-        backgroundImage:
-          "url('https://salient.tailwindui.com/_next/static/media/background-faqs.55d2e36a.jpg')",
-        backgroundSize: "cover",
-      }}
+      className="py-16 bg-[#f9fafc]"
+      // style={{
+      //   backgroundImage:
+      //     "url('https://salient.tailwindui.com/_next/static/media/background-faqs.55d2e36a.jpg')",
+      //   backgroundSize: "cover",
+      // }}
     >
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold mb-12">Our Programmes</h2>
+        <h2 className="text-4xl md:text-5xl text-rose-600 font-bold mb-12" style={{ backgroundImage: `url(${textbackground})`, backgroundClip:"text", color:'transparent'}}>
+          Our Programmes
+        </h2>
         <div className="relative">
           <div
             // ref={containerRef}

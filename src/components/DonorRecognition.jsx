@@ -1,28 +1,33 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import donors from '../imagesfiles/donars';
+import React from "react";
+import { motion } from "framer-motion";
+import textbackground from "../assets/text-background.png"
+import donors from "../imagesfiles/donars";
 
 const DonorRecognition = () => {
   return (
-    <section className="py-16 bg-[#eef2fe]">
+    <section className="py-16">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-gray-800">Our Donors</h2>
+        <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-rose-600" style={{ backgroundImage: `url(${textbackground})`, backgroundClip:"text", color:'transparent'}}>
+          Our Donors
+        </h2>
 
         {/* Scrolling Marquee */}
         <div className="overflow-x-hidden whitespace-nowrap mb-12">
           <motion.div
-            animate={{ x: ['100%', '-100%'] }}
-            transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+            animate={{ x: ["100%", "-100%"] }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
             className="flex space-x-8"
           >
             {donors.map((donor, index) => (
               <div key={index} className="flex flex-col  text-center">
-                <img 
-                  src={donor.logo} 
-                  alt={donor.name} 
-                  className="object-cover mx-4 rounded-full" 
+                <img
+                  src={donor.logo}
+                  alt={donor.name}
+                  className="object-cover mx-4 rounded-full"
                 />
-                <p className="mt-2 text-sm md:text-base lg:text-lg font-medium text-gray-700">{donor.name}</p>
+                <p className="mt-2 text-sm md:text-base lg:text-lg font-medium text-gray-700">
+                  {donor.name}
+                </p>
               </div>
             ))}
           </motion.div>

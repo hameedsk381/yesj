@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { Modal, Button, TextInput, Textarea } from '@mantine/core';
+import React, { useState } from "react";
+import { Modal, Button, TextInput, Textarea } from "@mantine/core";
 
 const VolunteerSignup = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    availability: '',
-    interests: '',
+    name: "",
+    email: "",
+    phone: "",
+    availability: "",
+    interests: "",
   });
 
   const [opened, setOpened] = useState(false);
@@ -25,10 +25,19 @@ const VolunteerSignup = () => {
 
   return (
     <>
-      <Button  onClick={() => setOpened(true)} className="bg-red-900 hover:bg-red-600">
+      <button
+        onClick={() => setOpened(true)}
+        className="bg-rose-300 w-fit text-rose-600 font-bold text-md px-3 py-2 rounded hover:bg-rose-500 hover:text-white"
+        size="md"
+        style={{ margin: "2rem 0" }}
+      >
         Volunteer Signup
-      </Button>
-      <Modal opened={opened} onClose={() => setOpened(false)} title="Volunteer Signup">
+      </button>
+      <Modal
+        opened={opened}
+        onClose={() => setOpened(false)}
+        title="Volunteer Signup"
+      >
         <form onSubmit={handleSubmit}>
           <TextInput
             label="Name"

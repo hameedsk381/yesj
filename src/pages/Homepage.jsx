@@ -59,13 +59,6 @@ const Homepage = () => {
             "url('https://salient.tailwindui.com/_next/static/media/background-faqs.55d2e36a.jpg')",
           backgroundSize: "cover",
         }}
-        // style={{
-        //   backgroundImage:
-        //     "url('https://keynote.tailwindui.com/_next/static/media/background.6c3571e0.jpg')",
-        //   backgroundPositionX: "700px",
-        //   backgroundRepeat: "no-repeat",
-        //   backgroundBlendMode: "inherit",
-        // }}
       >
         <div className="absolute z-10 inset-0 w-full h-full">
           <SplineBackground className="spline-background" />
@@ -86,9 +79,18 @@ This is a sample scrolling text that has scrolls in the upper direction.
      <ServicesOverview/>
      </CardSpotlight> */}
       <DynamicProgrammes />
-      <DonationBanner />
+      <div
+        style={{
+          backgroundImage:
+            "url('https://salient.tailwindui.com/_next/static/media/background-faqs.55d2e36a.jpg')",
+          backgroundSize: "cover",
+        }}
+      >
+        <DonationBanner />
 
-      <DonorRecognition />
+        <DonorRecognition />
+      </div>
+
       {/* <Testimonials /> */}
       <TestimonialCarousel />
       <NewsLetter />

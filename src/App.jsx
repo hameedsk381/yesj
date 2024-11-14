@@ -55,7 +55,7 @@ function App() {
         <CourseRegistrationForm />
       </Modal>
 
-      <div className="App">
+      <div className="App bg-[#f9fafc]">
         <Header />
         <Routes>
           <Route path="/" element={<Homepage />} />
