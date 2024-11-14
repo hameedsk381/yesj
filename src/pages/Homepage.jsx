@@ -60,9 +60,9 @@ const Homepage = () => {
           backgroundSize: "cover",
         }}
       >
-        <div className="absolute z-10 inset-0 w-full h-full">
+        {/* <div className="absolute z-10 inset-0 w-full h-full">
           <SplineBackground className="spline-background" />
-        </div>
+        </div> */}
 
         <div className="relative space-y-10">
           <ImpactMetrics />
