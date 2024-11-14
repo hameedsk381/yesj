@@ -4,7 +4,7 @@ import donors from '../imagesfiles/donars';
 
 const DonorRecognition = () => {
   return (
-    <section className="py-16 bg-gray-100">
+    <section className="py-16 bg-[#eef2fe]">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center text-gray-800">Our Donors</h2>
 

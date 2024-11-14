@@ -11,7 +11,13 @@ import Carouselslider from "../components/Carouselslider";
 import About from "../components/About";
 import NewsLetter from "../components/NewsLetter";
 import Contact from "../components/Contact";
-import { SimpleGrid, Text, ThemeIcon, rem } from "@mantine/core";
+import {
+  BackgroundImage,
+  SimpleGrid,
+  Text,
+  ThemeIcon,
+  rem,
+} from "@mantine/core";
 import {
   IconCircleDotted,
   IconFileCode,
@@ -46,7 +52,21 @@ const Homepage = () => {
         </div>
       </div>
       {/* <About/> */}
-      {/* <div className="relative overflow-hidden min-h-screen">
+      <div
+        className="relative overflow-hidden min-h-screen bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('https://salient.tailwindui.com/_next/static/media/background-faqs.55d2e36a.jpg')",
+          backgroundSize: "cover",
+        }}
+        // style={{
+        //   backgroundImage:
+        //     "url('https://keynote.tailwindui.com/_next/static/media/background.6c3571e0.jpg')",
+        //   backgroundPositionX: "700px",
+        //   backgroundRepeat: "no-repeat",
+        //   backgroundBlendMode: "inherit",
+        // }}
+      >
         <div className="absolute z-10 inset-0 w-full h-full">
           <SplineBackground className="spline-background" />
         </div>
@@ -55,7 +75,7 @@ const Homepage = () => {
           <ImpactMetrics />
           <ServicesOverview />
         </div>
-      </div> */}
+      </div>
       {/* <marquee width="60%" direction="up" height="100px">
 This is a sample scrolling text that has scrolls in the upper direction.
 </marquee> */}

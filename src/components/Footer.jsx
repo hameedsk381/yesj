@@ -48,7 +48,7 @@ function Footer() {
     ));
 
     return (
-      <div className={classes.wrapper} key={group.title}>
+      <div className={classes.wrapper} key={group.title} style={{ backgroundImage: "url('https://salient.tailwindui.com/_next/static/media/background-faqs.55d2e36a.jpg')", backgroundSize: "cover" }}>
         <Text className={classes.title}>{group.title}</Text>
         {links}
       </div>

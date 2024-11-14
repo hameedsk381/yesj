@@ -1,6 +1,10 @@
 .footer {
   padding: 2rem 0;
-  background-color: #f8f9fa;
+  /* background-color: #f8f9fa; */
+  background-image: url("https://salient.tailwindui.com/_next/static/media/background-faqs.55d2e36a.jpg");
+  background-size: cover;
+  background-position-y: -50px ;
+  backface-visibility: ;
 }
 
 .inner {
