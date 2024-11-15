@@ -12,7 +12,7 @@ const ServiceCard = ({ service }) => {
       initial="hidden"
       animate="visible"
       variants={cardVariants}
-      className=" p-6 transform transition duration-300 ease-in-out hover:text-white"
+      className=" p-6 transform transition duration-300 ease-in-out hover:text-rose-400"
     >
       <div className="text-6xl mb-4">{service.icon}</div>
       <h3 className="text-2xl font-bold  mb-2">{service.title}</h3>

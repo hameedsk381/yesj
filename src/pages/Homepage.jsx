@@ -53,6 +53,8 @@ const Homepage = () => {
         </div>
       </div>
       {/* <About/> */}
+        <img src={captions} alt="Yesj-values" style={{width: '100%', height: 'auto'}} className="mb-10" />
+
       <div
         className="relative overflow-hidden min-h-screen bg-cover bg-center"
         style={{
@@ -64,9 +66,6 @@ const Homepage = () => {
         {/* <div className="absolute z-10 inset-0 w-full h-full">
           <SplineBackground className="spline-background" />
         </div> */}
-        <img src={captions} alt="Yesj-values" style={{width: '100%', height: 'auto'}} className="mb-10" />
-
-
         <div className="relative space-y-10">
           <ImpactMetrics />
           <ServicesOverview />
