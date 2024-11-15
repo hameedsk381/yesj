@@ -1,47 +1,32 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import slider1 from '../assets/slider-01.jpg'
-import slider2 from '../assets/slider-2.jpg'
-import slider3 from '../assets/slider-3.jpg'
+import textbackground from '../assets/text-background.png';
 
+// Dynamically load all images using Vite's import.meta.glob
+const images = import.meta.glob('../assets/website/*.{jpg,png,jpeg}', { eager: true });
 
-const slides = [
-  {
-    image: slider1,
-    quote: 'I have dreams',
-    tag: 'ENCOURAGE'
-  },
-  {
-    image: slider2,
-    quote: 'Together, we make a',
-    tag: 'DIFFERENCE'
-  },
-  {
-    image: slider3,
-    quote: 'Empower',
-    tag: 'COMMUNITIES'
-  },
-];
+// Create slides array with quotes and tags
+const slides = Object.keys(images).map((path, index) => ({
+  image: images[path].default || images[path],
+  quote: index === 0 ? 'I have dreams' : index === 1 ? 'Together, we make a' : 'Empower',
+  tag: index === 0 ? 'ENCOURAGE' : index === 1 ? 'DIFFERENCE' : 'COMMUNITIES'
+}));
 
 const slideVariants = {
-  enter: (direction) => {
-    return {
-      x: direction > 0 ? 1000 : -1000,
-      opacity: 0
-    };
-  },
+  enter: (direction) => ({
+    x: direction > 0 ? 1000 : -1000,
+    opacity: 0
+  }),
   center: {
     zIndex: 1,
     x: 0,
     opacity: 1,
   },
-  exit: (direction) => {
-    return {
-      zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
-      opacity: 0
-    };
-  }
+  exit: (direction) => ({
+    zIndex: 0,
+    x: direction < 0 ? 1000 : -1000,
+    opacity: 0
+  })
 };
 
 const Carouselslider = () => {
@@ -50,9 +35,9 @@ const Carouselslider = () => {
   useEffect(() => {
     const autoplay = setInterval(() => {
       setCurrent(([prev]) => [(prev + 1) % slides.length, 1]);
-    }, 5000);  // Change slide every 5 seconds
+    }, 5000); // Change slide every 5 seconds
 
-    return () => clearInterval(autoplay);  // Cleanup the interval on component unmount
+    return () => clearInterval(autoplay);
   }, []);
 
   const paginate = (newDirection) => {
