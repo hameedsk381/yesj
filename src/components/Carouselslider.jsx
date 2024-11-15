@@ -5,11 +5,9 @@ import textbackground from '../assets/text-background.png';
 // Dynamically load all images using Vite's import.meta.glob
 const images = import.meta.glob('../assets/website/*.{jpg,png,jpeg}', { eager: true });
 
-// Create slides array with quotes and tags
-const slides = Object.keys(images).map((path, index) => ({
+// Create slides array with images only
+const slides = Object.keys(images).map((path) => ({
   image: images[path].default || images[path],
-  quote: index === 0 ? 'I have dreams' : index === 1 ? 'Together, we make a' : 'Empower',
-  tag: index === 0 ? 'ENCOURAGE' : index === 1 ? 'DIFFERENCE' : 'COMMUNITIES'
 }));
 
 const slideVariants = {
@@ -67,24 +65,6 @@ const Carouselslider = () => {
                 alt=""
                 className="w-full h-full object-cover"
               />
-              <div className="absolute left-3 top-12 md:left-10 md:top-24 lg:left-16 lg:top-32 text-white text-xl md:text-2xl lg:text-3xl font-bold p-2 md:p-3">
-                <motion.p
-                  className='mb-2 ml-10 bg-red-500 w-fit text-white p-2 rounded-md'
-                  initial={{ y: -20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.5 }}
-                >
-                  {slide.quote}
-                </motion.p>
-                <motion.p
-                  className='mb-2 bg-blue-500 w-fit text-white p-2 rounded-md'
-                  initial={{ y: -20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 1 }}
-                >
-                  {slide.tag}
-                </motion.p>
-              </div>
             </motion.div>
           )
         ))}

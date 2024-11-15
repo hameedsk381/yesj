@@ -69,7 +69,7 @@ const Contribute = () => {
         <DonationDetails />
         {/* Testimonials */}
         <section className="mt-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-rose-400">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 text-gary-9000">
             What Our Donors Say
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

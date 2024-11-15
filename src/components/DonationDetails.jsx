@@ -16,7 +16,7 @@ const DonationDetails = () => {
           </div>
           <div>
             <h4 className="text-lg font-semibold text-gray-900">Email</h4>
-            <p className="text-gray-700">donate@yesj.org</p>
+            <p className="text-gray-700">donate@yesj.in</p>
           </div>
         </div>
         <hr className="border-gray-300" />
@@ -31,7 +31,7 @@ const DonationDetails = () => {
             <p className="text-gray-700">+91 98765 43210</p>
           </div>
         </div>
-        <hr className="border-gray-300" />
+        {/* <hr className="border-gray-300" />
         <div className="flex items-center space-x-4">
           <div className="text-blue-600">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -47,7 +47,7 @@ const DonationDetails = () => {
         <div className="text-center">
           <h4 className="text-lg font-semibold text-gray-900 mb-4">Scan to Donate</h4>
           <img src={'https://quickchart.io/chart?cht=qr&chs=300x300&chl=https%3A%2F%2Fcommentpicker.com%2Fqr-code-generator.php&margin=2'} alt="QR Code" className="mx-auto w-40 h-40" />
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -85,9 +85,9 @@ function Header() {
           </Tabs>
           {/* {login ? <ProfileMenu /> : <Button variant="gradient" gradient={{ from: 'blue', to: 'pink' }} onClick={open}>Login / Register</Button>} */}
         </nav>
-        <div className="flex md:hidden justify-between w-full pb-1 pr-3">
-          <Avatar src="YESJ_Logo_Black.png" alt="Yesj" radius="xl" size="3.5rem" />
-          <Burger opened={menuOpened} onClick={openDrawer} />
+        <div className="flex md:hidden justify-between w-full pb-3 pr-3">
+          <Avatar src={logo1} alt="Yesj" radius="xl" size="3.5rem" />
+          <Burger size={'md'}  opened={menuOpened} onClick={openDrawer} className='mt-3' />
         </div>
       </header>
 

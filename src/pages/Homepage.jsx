@@ -44,16 +44,16 @@ const Homepage = () => {
   return (
     <div>
       {/* <HeroSection/> */}
-      <div className="  h-screen  flex flex-col md:flex-row">
-        <div className="w-full md:w-3/4 h-1/2 md:h-full">
+      <div className="grid grid-cols-1 md:grid-cols-7 h-[88dvh]">
+        <div className="col-span-7 md:col-span-5 h-full">
           <Carouselslider />
         </div>
-        <div className="w-full md:w-1/4 h-1/2 md:h-full">
+        <div className="col-span-7 md:col-span-2 h-full">
           <VerticalScrollingAnnouncement />
         </div>
       </div>
       {/* <About/> */}
-        <img src={captions} alt="Yesj-values" style={{width: '100%', height: 'auto'}} className="mb-10" />
+        <img src={captions} alt="Yesj-values" style={{width: '100%', height: 'auto'}} className="my-10" />
 
       <div
         className="relative overflow-hidden min-h-screen bg-cover bg-center"

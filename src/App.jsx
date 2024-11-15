@@ -64,9 +64,9 @@ function App() {
           <Route path="*" element={<ErrorPage />} />
           <Route path="/programmes" element={<Programmes />} />
           <Route path="/contactus" element={<Contact />} />
-          <Route path="/mediagallery" element={<Gallery />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="event/:id" element={<EventDetails />} />
-          <Route path="/yesjechos" element={<YesjEchos />} />
+          <Route path="/yesjechoes" element={<YesjEchos />} />
           <Route path="/contribute" element={<Contribute />} />
         </Routes>
         <Footer />
