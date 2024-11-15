@@ -25,7 +25,7 @@ export function StylizedImage({ shape = 0, className, ...props }) {
   let { width, height, path } = shapes[shape];
 
   return (
-    <div className={clsx(className, "relative flex aspect-[900/680] w-full")}>
+    <div className={clsx(className, "relative flex max-w-[250px] sm:max-w-[450px] w-[100%]")}>
       <svg viewBox={`0 0 ${width} ${height}`} fill="none" className="h-full">
         <g clipPath={`url(#${id}-clip)`} className="group">
           <g className="origin-center scale-100 transition duration-500 motion-safe:group-hover:scale-105">

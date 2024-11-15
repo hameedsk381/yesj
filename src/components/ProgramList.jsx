@@ -67,7 +67,7 @@ const programsList = [
 
 const ProgramList = () => {
   return (
-    <div className="bg-gradient-to-r from-blue-50 to-indigo-50 min-h-screen">
+    <div className="bg-[#f9fafc] min-h-screen">
       {/* Hero Section */}
       <div className="relative w-full h-[100px] lg:h-full">
         <img src={bannerprogrammes} alt="Event" className="w-full h-full object-cover" />

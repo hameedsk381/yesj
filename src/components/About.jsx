@@ -44,7 +44,7 @@ const features = [
 ];
 
 const items = features.map((feature) => (
-  <div key={feature.title} className="flex flex-col items-center text-center p-4 bg-white rounded-lg  transition-shadow duration-300">
+  <div key={feature.title} className="flex flex-col items-center text-center p-4 bg-white hover:shadow-lg rounded-lg  transition-shadow duration-300">
     <img src={feature.image} alt={feature.title} className="w-12 h-12 mb-4" />
     <h3 className="text-lg font-semibold">{feature.title}</h3>
     <p className="text-gray-600 mt-2">{feature.description}</p>
@@ -60,7 +60,7 @@ const ManagementTeamItem = ({ name, title, image }) => (
 );
 
 const About = () => (
-  <Container className="my-10" size={'xl'}>
+  <Container className="my-10 " size={'xl'}>
     <div className="px-10">
       <h2 className="text-red-500 text-center text-3xl font-bold mb-6">
         YOUTH EMPOWERING SERVICE - JESUITS
@@ -77,7 +77,7 @@ const About = () => (
     </div>
 
     <div className=" p-10 mt-10">
-      <h2 className=" text-white text-center text-3xl font-bold mb-6">
+      <h2 className=" text-red-500 text-center text-3xl font-bold mb-6">
         OUR MANAGEMENT TEAM
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
