@@ -1,6 +1,20 @@
 import React, { useState } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
-import echoes from '../assets/echoes.png'
+import echoes1 from '../assets/echoes/ECHOESI.jpg'
+import echoes2 from '../assets/echoes/ECHOESII.jpg';
+import echoes3 from '../assets/echoes/ECHOESIII.jpg';
+import echoes4 from '../assets/echoes/ECHOESIV.jpg';
+import echoes5 from '../assets/echoes/ECHOESV.jpg';
+import echoes6 from '../assets/echoes/ECHOESVI.jpg';
+// import echoes7 from '../assets/echoes/ECHOESVII.jpg';
+// import echoes8 from '../assets/echoes/ECHOESVIII.jpg';
+import echoes9 from '../assets/echoes/ECHOESIX.jpg';
+import echoes10 from '../assets/echoes/ECHOESX.jpg';
+import echoes11 from '../assets/echoes/ECHOESXI.jpg';
+// import echoes12 from '../assets/echoes/ECHOESXII.jpg';
+import echoes13 from '../assets/echoes/ECHOESXIII.jpg';
+import echoes14 from '../assets/echoes/ECHOESXIV.jpg';
+
 const YesjEchos = () => {
   const [email, setEmail] = useState('');
 
@@ -14,95 +28,96 @@ const YesjEchos = () => {
   const books = [
     {
       id: 1,
-      title: 'The Great Gatsby',
-      date: '1925-04-10',
-      image: echoes,
-      pdfUrl: 'https://example.com/the-great-gatsby.pdf'
+      title: 'ECHOES-I',
+      date: '2016-08-01',
+      image: echoes1,
+      pdfUrl: 'https://cloud.yesj.in/s/PCocCzBkExGMPSB'
     },
     {
       id: 2,
-      title: 'To Kill a Mockingbird',
-      date: '1960-07-11',
-      image: echoes,
-      pdfUrl: 'https://example.com/to-kill-a-mockingbird.pdf'
+      title: 'ECHOES-II',
+      date: '2016-12-01',
+      image: echoes2,
+      pdfUrl: 'https://cloud.yesj.in/s/JsY8X8Rkn5tLAsa'
     },
     {
       id: 3,
-      title: '1984',
-      date: '1949-06-08',
-      image: echoes,
-      pdfUrl: 'https://example.com/1984.pdf'
+      title: 'ECHOES-III',
+      date: '2017-06-01',
+      image: echoes3,
+      pdfUrl: 'https://cloud.yesj.in/s/9cHHjm4X65JZbJy'
     },
     {
       id: 4,
-      title: 'Pride and Prejudice',
-      date: '1813-01-28',
-      image: echoes,
-      pdfUrl: 'https://example.com/pride-and-prejudice.pdf'
+      title: 'ECHOES-IV',
+      date: '2017-10-01',
+      image: echoes4,
+      pdfUrl: 'https://cloud.yesj.in/s/25q2DY7tPdL2L8F'
     },
     {
       id: 5,
-      title: 'The Catcher in the Rye',
-      date: '1951-07-16',
-      image: echoes,
-      pdfUrl: 'https://example.com/the-catcher-in-the-rye.pdf'
+      title: 'ECHOES-V',
+      date: '2018-02-01',
+      image: echoes5,
+      pdfUrl: 'https://cloud.yesj.in/s/jEdW8QX6CFT2mpJ'
     },
     {
       id: 6,
-      title: 'One Hundred Years of Solitude',
-      date: '1967-05-30',
-      image: echoes,
-      pdfUrl: 'https://example.com/one-hundred-years-of-solitude.pdf'
+      title: 'ECHOES-VI',
+      date: '2018-06-01',
+      image: echoes6,
+      pdfUrl: 'https://cloud.yesj.in/s/6SkwwoAjr7TfmDo'
     },
-    {
-      id: 7,
-      title: 'The Hobbit',
-      date: '1937-09-21',
-      image: echoes,
-      pdfUrl: 'https://example.com/the-hobbit.pdf'
-    },
-    {
-      id: 8,
-      title: 'The Da Vinci Code',
-      date: '2003-03-18',
-      image: echoes,
-      pdfUrl: 'https://example.com/the-da-vinci-code.pdf'
-    },
+    // {
+    //   id: 7,
+    //   title: 'ECHOES-VII',
+    //   date: '1937-09-22',
+    //   image: echoes6,
+    //   pdfUrl: 'https://example.com/the-hobbit.pdf'
+    // },
+    // {
+    //   id: 8,
+    //   title: 'ECHOES-VIII',
+    //   date: '2023-03-22',
+    //   image: echoes6,
+    //   pdfUrl: 'https://example.com/the-da-vinci-code.pdf'
+    // },
     {
       id: 9,
-      title: 'The Alchemist',
-      date: '1988-01-01',
-      image: echoes,
-      pdfUrl: 'https://example.com/the-alchemist.pdf'
+      title: 'ECHOES-IX',
+      date: '2023-04-01',
+      image: echoes9,
+      pdfUrl: 'https://cloud.yesj.in/s/LkH5FBExNpA9e5J'
     },
     {
       id: 10,
-      title: 'The Little Prince',
-      date: '1943-04-06',
-      image: echoes,
-      pdfUrl: 'https://example.com/the-little-prince.pdf'
+      title: 'ECHOES-X',
+      date: '2023-07-01',
+      image: echoes10,
+      pdfUrl: 'https://cloud.yesj.in/s/WjjPgsn4z6E5GTb'
     },
     {
       id: 11,
-      title: 'Harry Potter and the Philosopher\'s Stone',
-      date: '1997-06-26',
-      image: echoes,
-      pdfUrl: 'https://example.com/harry-potter-and-the-philosophers-stone.pdf'
+      title: 'ECHOES-XI',
+      date: '2023-10-01',
+      image: echoes11,
+      pdfUrl: 'https://cloud.yesj.in/s/PeycjmtBmBLZaFK'
     },
     {
       id: 12,
-      title: 'The Lord of the Rings',
-      date: '1954-07-29',
-      image: echoes,
-      pdfUrl: 'https://example.com/the-lord-of-the-rings.pdf'
+      title: 'ECHOES-XII',
+      date: '2024-01-01',
+      image: echoes6,
+      pdfUrl: 'https://cloud.yesj.in/s/bL39Rt4wqPXJESM'
     },
     {
       id: 13,
-      title: 'Don Quixote',
-      date: '1605-01-16',
-      image: echoes,
-      pdfUrl: 'https://example.com/don-quixote.pdf'
+      title: 'ECHOES-XIII',
+      date: '2024-04-01',
+      image: echoes13,
+      pdfUrl: 'https://cloud.yesj.in/s/jxQ89BtWCJ64HoP'
     },
+  
   ];
 
   const handleReadBook = (pdfUrl) => {
@@ -131,12 +146,12 @@ const YesjEchos = () => {
           {books.map((book) => (
             <div
               key={book.id}
-              className="bg-white rounded-lg h-75 shadow-md overflow-hidden transition duration-300 ease-in-out transform hover:scale-105"
+              className="bg-white rounded-lg h-100 shadow-md overflow-hidden transition duration-300 ease-in-out transform hover:scale-105"
             >
               <img
                 src={book.image}
                 alt={book.title}
-                className="w-full h-75  object-contain"
+                className="w-full h-50  object-contain"
               />
               <div className="p-4 flex flex-col items-center justify-center">
                 <h3 className="text-[1rem] text-center font-semibold mb-2">{book.title}</h3>

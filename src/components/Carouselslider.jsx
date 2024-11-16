@@ -63,7 +63,7 @@ const Carouselslider = () => {
               <img
                 src={slide.image}
                 alt=""
-                className="w-full h-full object-cover"
+                className="w-full h-full object-fill"
               />
             </motion.div>
           )

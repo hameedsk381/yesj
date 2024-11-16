@@ -8,32 +8,32 @@ const DonationBanner = () => {
 
   return (
     <Paper
-      px={"5%"}
+      px={"10%"}
       py={isMobile ? "5%" : "3%"}
       style={{
         display: "flex",
-        flexDirection: isMobile ? "column" : "row",
+        flexDirection: isMobile ? "column-reverse" : "row",
         alignItems: "center",
-        gap:'10px',
+        gap:'50px',
         backgroundColor: "transparent",
         // backgroundImage: "url('https://salient.tailwindui.com/_next/static/media/background-faqs.55d2e36a.jpg')",
         // backgroundSize: "cover" ,
         // background: 'linear-gradient(135deg, #ff8a00 0%, #e52e71 100%)',
       }}
     >
-      <div className="flex flex-col justify-center"
+      <div className="flex flex-col "
       >
-        <h1 className="font-bold text-2xl text-rose-500">
+        <h1 className="font-bold text-2xl text-center w-full text-rose-500">
           DONATE TO TRANSFORM
         </h1>
-        <p className="text-gray-700" style={{ margin: "1em 0" }}>
+        <p className="text-gray-700" style={{ margin: "1em 0",justifyContent:'center' ,textAlign:'center'}}>
           Transform a young life today. Every donation helps break the cycle of poverty, giving underprivileged youth not just hope, but the tools, education, and mentorship they need to build their dreams. Your support doesn't just change their tomorrow—it empowers an entire generation to rise, lead, and create lasting change in our communities.
         </p>
        
         <button
           className="w-fit font-bold text-md px-3 py-2 rounded bg-rose-500 text-white"
           size="md"
-          style={{ margin: "2rem 0" }}
+          style={{ margin: "auto" }}
         >
           JOIN US
         </button>

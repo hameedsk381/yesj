@@ -1,16 +1,23 @@
 import { IconArrowForward } from '@tabler/icons-react';
-import React from 'react';
-import { Marquee } from './Marquee';
-
-const announcements = [
-  { text: "Welcome to YES-J's official website!", link: "#", isNew: true },
-  { text: "Check out our latest programs and initiatives.", link: "#", isNew: false },
-  { text: "Join us in empowering the youth of Andhra Pradesh and Telangana.", link: "#", isNew: false },
-  { text: "Donations are now open for our new community center project.", link: "#", isNew: true },
-  { text: "Stay tuned for our upcoming events and workshops.", link: "#", isNew: false }
-];
+import React, { useEffect, useState } from 'react';
 
 const VerticalScrollingAnnouncement = () => {
+  const [announcements, setAnnouncements] = useState([]);
+
+  useEffect(() => {
+    const fetchAnnouncements = async () => {
+      try {
+        const response = await fetch('https://api.example.com/announcements'); // Replace with your actual API endpoint
+        const data = await response.json();
+        setAnnouncements(data);
+      } catch (error) {
+        console.error('Error fetching announcements:', error);
+      }
+    };
+
+    fetchAnnouncements();
+  }, []);
+
   return (
     <div className="relative w-full h-full bg-red-500 md:bg-transparent overflow-hidden">
       {/* <div className="absolute top-0 w-full bg-white text-black py-4 text-center text-xl font-bold shadow-lg z-10">

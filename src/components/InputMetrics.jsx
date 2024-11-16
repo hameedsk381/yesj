@@ -15,7 +15,7 @@ const cardVariants = {
 
 const ImpactMetrics = () => {
   return (
-    <section className="py-16 px-8 ">
+    <section className="py-16 px-2 ">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-12" style={{ backgroundImage: `url(${textbackground})`, backgroundClip:"text", color:'transparent'}}>
           Our Impact
@@ -24,7 +24,7 @@ const ImpactMetrics = () => {
           initial="hidden"
           animate="visible"
           variants={{ visible: { transition: { staggerChildren: 0.3 } } }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-3 gap-12"
         >
           {metrics.map((metric) => (
           <motion.div
@@ -32,11 +32,11 @@ const ImpactMetrics = () => {
           variants={cardVariants}
           className="hover:text-rose-400 transform transition duration-300 ease-in-out"
         >
-          <div className="text-6xl mb-4 ">{metric.icon}</div>
-          <div className="text-4xl font-extrabold  mb-2">
+          <div className="text-2xl md:text-4xl  mb-2">{metric.icon}</div>
+          <div className=" text-xl md:text-3xl font-extrabold mb-1">
             {metric.value}
           </div>
-          <div className="text-2xl font-medium ">
+          <div className="text-sm md:text-lg font-medium">
             {metric.label}
           </div>
         </motion.div>

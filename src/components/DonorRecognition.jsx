@@ -8,11 +8,13 @@ const DonorRecognition = () => {
   const [donors, setDonors] = useState([]);
 
   useEffect(() => {
-    // Extract the image paths and create an array of donor objects
-    const donorList = Object.keys(images).map((path) => ({
-      logo: images[path].default || images[path],
-      name: path.split('/').pop().split('.')[0] // Extract the file name without extension
-    }));
+    // Extract the image paths and create an array of donor objects, sorted in descending order
+    const donorList = Object.keys(images)
+      .map((path) => ({
+        logo: images[path].default || images[path],
+        name: path.split('/').pop().split('.')[0] // Extract the file name without extension
+      }))
+      .sort((a, b) => b.name.localeCompare(a.name)); // Sort by name in descending order
     setDonors(donorList);
   }, []);
 
@@ -25,13 +27,13 @@ const DonorRecognition = () => {
         >
           Our Collaborators
         </h2>
-        <div className="flex flex-wrap justify-center m-auto lg:gap-10 container max-w-6xl">
+        <div className="flex flex-wrap justify-center m-auto gap-4 lg:gap-8 container max-w-6xl">
           {donors.map((donor, index) => (
             <img
               key={index}
               src={donor.logo}
               alt={donor.name}
-              className="object-fill mx-4  w-18 h-8 md:w-36 md:h-24 mb-6"
+              className="object-fill mx-2  w-18 h-12 md:w-44 md:h-20 mb-4"
             />
           ))}
         </div>

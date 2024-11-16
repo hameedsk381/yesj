@@ -51,7 +51,7 @@ const events = [
       ],
     }, {
         id: 1,
-        imageUrl: "https://bafkreib735rfajy6duy22idxwiobwimpxaxs3gju4ymz5uzdhwg2n3lgoe.ipfs.flk-ipfs.xyz/",
+        imageUrl: "https://cloud.yesj.in/remote.php/dav/files/office%40yesj.in/Photos/website/english.jpg",
         title: "PERSONAL ENHANCEMENT PROGRAMMES (PEP)",
         problem: [
           "Many young people lack the confidence and the necessary skills to navigate the complexities of life, both societal and psychological.",

@@ -4,7 +4,7 @@ import volunteer from "../assets/volunteer.png";
 export function NewsLetter() {
   return (
     <div
-    className="flex px-4 sm:px-20 gap-6 flex-col items-center md:flex-row-reverse"
+    className="flex px-4 sm:px-20 gap-6 flex-col items-center md:flex-row"
     // style={{
     //   display: "flex",
     //   flexDirection: "column",
@@ -12,22 +12,22 @@ export function NewsLetter() {
     //   backgroundColor: "#f9fafc",
     // }}
   >
-    <div className="flex flex-col gap-5 justify-center">
-      <h1 className="text-2xl font-bold text-rose-400">BECOME A VOLUNTEER</h1>
-      <p className="text-lg text-gray-700">
+    <div className="flex flex-col  gap-5 justify-center mx-4 ">
+      <h1 className="text-2xl font-bold text-rose-500">BECOME A VOLUNTEER</h1>
+      <p className="text-md font-serif text-gray-800">
       Our Voluntary Immersion Programme enables you to challenge yourself, experience another culture and develop an attitude of being grateful.
       </p>
-      <p className="text-lg text-gray-700">
+      <p className="text-md text-gray-700">
         Come and immerse yourself to change your world.
       </p>
       <VolunteerSignup />
     </div>
-    <div className="lg:pr-4">
+    <div className="px-4">
         <div className="relative overflow-hidden rounded-3xl px-6 pb-9 pt-64 shadow-2xl sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 xl:px-10 xl:pb-10">
           <img
             alt=""
             src={volunteer}
-            className="absolute inset-0 size-full object-cover brightness-100 saturate-100"
+            className="absolute inset-0 size-full object-cover h-56 brightness-96 "
           />
           <div className="absolute inset-0 bg-gray-600 mix-blend-multiply" />
           <div
