@@ -33,7 +33,7 @@ const DonorRecognition = () => {
               key={index}
               src={donor.logo}
               alt={donor.name}
-              className="object-fill mx-2  w-18 h-12 md:w-44 md:h-20 mb-4"
+              className="object-fill mx-2  w-18 h-12 md:w-38 md:h-20 mb-4"
             />
           ))}
         </div>

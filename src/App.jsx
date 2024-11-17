@@ -20,6 +20,8 @@ import YesjEchos from './components/YesjEchos';
 import Contribute from './components/Contribute';
 
 import 'leaflet/dist/leaflet.css';
+import Courses from './pages/Courses';
+import EventPage from './pages/Events';
 
 function App() {
   const [firstVisit, setFirstVisit] = useState(false);
@@ -68,6 +70,8 @@ function App() {
           <Route path="event/:id" element={<EventDetails />} />
           <Route path="/yesjechoes" element={<YesjEchos />} />
           <Route path="/contribute" element={<Contribute />} />
+          <Route path="/courses" element={<Courses />} />
+          <Route path='/events'  element={<EventPage/>}/>
         </Routes>
         <Footer />
       </div>

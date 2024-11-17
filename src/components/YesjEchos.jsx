@@ -14,7 +14,7 @@ import echoes11 from '../assets/echoes/ECHOESXI.jpg';
 // import echoes12 from '../assets/echoes/ECHOESXII.jpg';
 import echoes13 from '../assets/echoes/ECHOESXIII.jpg';
 import echoes14 from '../assets/echoes/ECHOESXIV.jpg';
-
+import bannerprogrammes from "../assets/banner-programmes.jpg"
 const YesjEchos = () => {
   const [email, setEmail] = useState('');
 
@@ -129,7 +129,7 @@ const YesjEchos = () => {
       {/* Full-width image */}
       <div className="w-full">
         <img
-          src="https://yesj.org/assets/in-banners/banner-OurMission.jpg"
+          src={bannerprogrammes}
           alt="Book Library"
           className="w-full h-full object-fill"
         />
@@ -141,7 +141,7 @@ const YesjEchos = () => {
       </div> */}
 
       {/* Book cards */}
-      <div className="container mx-auto px-4 my-12">
+      <div className="container mx-auto p-16 my-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {books.map((book) => (
             <div
