@@ -1,19 +1,18 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import textbackground from '../assets/text-background.png';
 
 // Dynamically load all images using Vite's import.meta.glob
 const images = import.meta.glob('../assets/website/*.{jpg,png,jpeg}', { eager: true });
-
-// Create slides array with images only
 const slides = Object.keys(images).map((path) => ({
   image: images[path].default || images[path],
 }));
 
+// Cache variants outside the component
 const slideVariants = {
   enter: (direction) => ({
     x: direction > 0 ? 1000 : -1000,
-    opacity: 0
+    opacity: 0,
   }),
   center: {
     zIndex: 1,
@@ -23,24 +22,26 @@ const slideVariants = {
   exit: (direction) => ({
     zIndex: 0,
     x: direction < 0 ? 1000 : -1000,
-    opacity: 0
-  })
+    opacity: 0,
+  }),
 };
 
-const Carouselslider = () => {
+const Carouselslider = React.memo(() => {
   const [[current, direction], setCurrent] = useState([0, 0]);
 
   useEffect(() => {
     const autoplay = setInterval(() => {
       setCurrent(([prev]) => [(prev + 1) % slides.length, 1]);
-    }, 5000); // Change slide every 5 seconds
-
+    }, 5000);
     return () => clearInterval(autoplay);
   }, []);
 
-  const paginate = (newDirection) => {
-    setCurrent([current + newDirection, newDirection]);
-  };
+  const paginate = useCallback(
+    (newDirection) => {
+      setCurrent(([currentIndex]) => [(currentIndex + newDirection + slides.length) % slides.length, newDirection]);
+    },
+    [slides.length]
+  );
 
   return (
     <div className="w-full h-full overflow-hidden relative">
@@ -56,14 +57,15 @@ const Carouselslider = () => {
               exit="exit"
               custom={direction}
               transition={{
-                x: { type: 'spring', stiffness: 300, damping: 30 },
-                opacity: { duration: 0.2 }
+                x: { type: 'spring', stiffness: 200, damping: 25 },
+                opacity: { duration: 0.2 },
               }}
             >
               <img
                 src={slide.image}
                 alt=""
-                className="w-full h-full object-fill"
+                className="w-full h-full object-cover"
+                loading="lazy"
               />
             </motion.div>
           )
@@ -80,6 +82,6 @@ const Carouselslider = () => {
       </div>
     </div>
   );
-}
+});
 
 export default Carouselslider;
