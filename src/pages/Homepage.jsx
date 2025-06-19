@@ -36,9 +36,7 @@ import SuccessStories from "../components/SuccessStories";
 import ContactSection from "../components/ContactSection";
 import Chatbot from "../components/Chatbot";
 import VerticalScrollingAnnouncement from "../components/VerticalScrollingAnnouncement";
-import { CardSpotlight } from "../components/card-spotlight";
-import SplineBackground from "../components/SplineBackground";
-// import CardsCarousel from '../components/Carousel'
+
 
 const Homepage = () => {
   return (

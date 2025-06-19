@@ -37,26 +37,6 @@ function App() {
 
   return (
     <Router>
-      <Modal opened={firstVisit} onClose={() => setFirstVisit(false)} size="lg">
-        <div className="text-center">
-          <Image src="yesj_activity.png" alt="Poster" h={400}  style={{objectFit:'fill'}}/>
-          <Button
-            rightSection={<IconArrowRight size={14} />}
-            onClick={() => {
-              setFirstVisit(false);
-              openCourseModal();
-            }}
-            className="mt-4"
-          >
-            Register for a course
-          </Button>
-        </div>
-      </Modal>
-
-      <Modal fullScreen opened={courseModalOpened} onClose={closeCourseModal}>
-        <CourseRegistrationForm />
-      </Modal>
-
       <div className="App bg-[#f9fafc]">
         <Header />
         <Routes>

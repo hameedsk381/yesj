@@ -3,107 +3,144 @@ import React, { useEffect, useState } from 'react';
 
 const VerticalScrollingAnnouncement = () => {
   const [announcements, setAnnouncements] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Mock data for when no announcements are available
+  const mockAnnouncements = [
+    {
+      id: 1,
+      text: "Welcome to our platform! Check out our latest features.",
+      link: "#",
+      isNew: true
+    },
+    {
+      id: 2,
+      text: "New updates coming soon. Stay tuned for exciting changes!",
+      link: "#",
+      isNew: false
+    },
+    {
+      id: 3,
+      text: "Join our community events this weekend. Don't miss out!",
+      link: "#",
+      isNew: true
+    }
+  ];
 
   useEffect(() => {
     const fetchAnnouncements = async () => {
       try {
-        const response = await fetch('https://api.example.com/announcements'); // Replace with your actual API endpoint
+        setIsLoading(true);
+        const response = await fetch('https://api.yesj.in/announcements');
+        if (!response.ok) {
+          // Instead of throwing error, use mock data
+          setAnnouncements(mockAnnouncements);
+          return;
+        }
         const data = await response.json();
-        setAnnouncements(data);
+        setAnnouncements(data.length > 0 ? data : mockAnnouncements);
       } catch (error) {
         console.error('Error fetching announcements:', error);
+        // Use mock data instead of setting error
+        setAnnouncements(mockAnnouncements);
+      } finally {
+        setIsLoading(false);
       }
     };
 
     fetchAnnouncements();
   }, []);
 
+  if (isLoading) {
+    return (
+      <div className="w-full h-32 flex items-center justify-center bg-gray-100">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-red-600"></div>
+      </div>
+    );
+  }
+
+  const AnnouncementCard = ({ announcement, index }) => (
+    <div className="text-center px-4">
+      <div className="border border-gray-200 p-4 rounded-lg bg-white shadow-md hover:shadow-lg transition-shadow duration-300 relative">
+        {announcement.isNew && (
+          <span className="absolute -top-2 -right-2 bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded-full">
+            New
+          </span>
+        )}
+        <p className="text-gray-800 mb-3 font-medium">{announcement.text}</p>
+        <a
+          href={announcement.link}
+          className="inline-flex items-center text-red-600 hover:text-red-700 transition-colors duration-200"
+        >
+          Read More
+          <IconArrowForward className="ml-1 h-4 w-4" />
+        </a>
+      </div>
+    </div>
+  );
+
   return (
-    <div className="relative w-full h-full bg-red-500 md:bg-transparent overflow-hidden">
-      {/* <div className="absolute top-0 w-full bg-white text-black py-4 text-center text-xl font-bold shadow-lg z-10">
-        Announcements
-      </div> */}
-
-      {/* Padding to ensure title does not overlap with scrolling content */}
+    <div className="relative w-full h-full bg-gray-50 overflow-hidden">
       <div className="pt-12 h-full overflow-auto relative">
-
-        {/* Vertical scrolling for desktop */}
-        <div className="hidden md:flex absolute top-0 w-full h-full animate-verticalScroll flex-col space-y-4">
-          {announcements.map((announcement, index) => (
-            <div key={index} className="text-center px-4">
-              <div className="border border-gray-300 p-4 rounded-md bg-red-600 bg-opacity-80 relative">
-                {announcement.isNew && (
-                  <span className="absolute bottom-2 right-2 bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded-full">
-                    New
-                  </span>
-                )}
-                <p className="text-white mb-2">{announcement.text}</p>
-                <a
-                  href={announcement.link}
-                  className="text-yellow-300 hover:underline"
-                >
-                  Read More
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="hidden md:flex absolute top-[120%] w-full h-full animate-verticalScroll flex-col space-y-12">
-          {announcements.map((announcement, index) => (
-            <div key={index} className="text-center px-4">
-              <div className="border border-gray-300 p-4 rounded-md bg-red-600 bg-opacity-80  relative">
-                {announcement.isNew && (
-                  <span className="absolute bottom-2 right-2 bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded-full">
-                    New
-                  </span>
-                )}
-                <p className="text-white mb-2">{announcement.text}</p>
-                <a
-                  href={announcement.link}
-                  className="text-yellow-300 hover:underline"
-                >
-                  Read More
-                </a>
-              </div>
-            </div>
-          ))}
+        {/* Desktop View */}
+        <div className="hidden md:block">
+          <div className="absolute top-0 w-full h-full animate-verticalScroll flex-col space-y-6">
+            {announcements.map((announcement, index) => (
+              <AnnouncementCard key={index} announcement={announcement} index={index} />
+            ))}
+          </div>
+          <div className="absolute top-[120%] w-full h-full animate-verticalScroll flex-col space-y-6">
+            {announcements.map((announcement, index) => (
+              <AnnouncementCard key={index} announcement={announcement} index={index} />
+            ))}
+          </div>
         </div>
 
-        <div className="md:hidden  absolute top-0 w-screen h-full animate-verticalScroll flex flex-col space-y-12 overflow-hidden">
-          {announcements.map((announcement, index) => (
-            <div key={index} className="text-center px-4 py-2 relative">
-              {announcement.isNew && (
-                <span className="absolute top-2 right-2 bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded-full">
-                  New
-                </span>
-              )}
-              <p className="text-white mb-2">{announcement.text}</p>
-              <a
-                href={announcement.link}
-                className="text-yellow-300 hover:underline"
-              >
-                Read More
-              </a>
-            </div>
-          ))}
-        </div>
-        <div className="md:hidden  absolute top-[120%] w-screen h-full animate-verticalScroll flex flex-col space-y-12 overflow-hidden">
-          {announcements.map((announcement, index) => (
-            <div key={index} className="text-center px-4 py-2 relative">
-              {announcement.isNew && (
-                <span className="absolute top-2 right-2 bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded-full">
-                  New
-                </span>
-              )}
-              <p className="text-white mb-2">{announcement.text}</p>
-              <a
-                href={announcement.link}
-                className="text-yellow-300 hover:underline"
-              >
-                Read More
-              </a>
-            </div>
-          ))}
+        {/* Mobile View */}
+        <div className="md:hidden">
+          <div className="absolute top-0 w-full h-full animate-verticalScroll flex-col space-y-6">
+            {announcements.map((announcement, index) => (
+              <div key={index} className="text-center px-4 py-2">
+                <div className="bg-white p-4 rounded-lg shadow-sm">
+                  {announcement.isNew && (
+                    <span className="inline-block bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded-full mb-2">
+                      New
+                    </span>
+                  )}
+                  <p className="text-gray-800 mb-2">{announcement.text}</p>
+                  <a
+                    href={announcement.link}
+                    className="inline-flex items-center text-red-600 hover:text-red-700"
+                  >
+                    Read More
+                    <IconArrowForward className="ml-1 h-4 w-4" />
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="absolute top-[120%] w-full h-full animate-verticalScroll flex-col space-y-6">
+            {announcements.map((announcement, index) => (
+              <div key={index} className="text-center px-4 py-2">
+                <div className="bg-white p-4 rounded-lg shadow-sm">
+                  {announcement.isNew && (
+                    <span className="inline-block bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded-full mb-2">
+                      New
+                    </span>
+                  )}
+                  <p className="text-gray-800 mb-2">{announcement.text}</p>
+                  <a
+                    href={announcement.link}
+                    className="inline-flex items-center text-red-600 hover:text-red-700"
+                  >
+                    Read More
+                    <IconArrowForward className="ml-1 h-4 w-4" />
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

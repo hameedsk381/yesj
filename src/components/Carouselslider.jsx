@@ -2,13 +2,24 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import textbackground from '../assets/text-background.png';
 
-// Dynamically load all images using Vite's import.meta.glob
-const images = import.meta.glob('../assets/website/*.{jpg,png,jpeg}', { eager: true });
+// Import images using Vite's import.meta.glob with proper error handling
+const images = import.meta.glob('/public/website/*.{jpg,png,jpeg}', { 
+  eager: true,
+  import: 'default'
+});
 
-// Create slides array with images only
-const slides = Object.keys(images).map((path) => ({
-  image: images[path].default || images[path],
-}));
+// Create slides array with proper type checking and error handling
+const slides = Object.entries(images).map(([path, image]) => {
+  if (!image) {
+    console.warn(`Failed to load image: ${path}`);
+    return null;
+  }
+  return {
+    image,
+    path,
+    alt: path.split('/').pop().split('.')[0] // Generate alt text from filename
+  };
+}).filter(Boolean); // Remove any null entries from failed loads
 
 const slideVariants = {
   enter: (direction) => ({
