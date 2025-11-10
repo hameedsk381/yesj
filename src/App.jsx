@@ -23,6 +23,19 @@ import 'leaflet/dist/leaflet.css';
 import Courses from './pages/Courses';
 import EventPage from './pages/Events';
 
+// Admin components
+import { AdminProvider } from './contexts/AdminContext';
+import AdminLogin from './components/AdminLogin';
+import AdminDashboard from './pages/AdminDashboard';
+import AdminHome from './pages/AdminHome';
+import AdminCarousel from './pages/AdminCarousel';
+import AdminAnnouncements from './pages/AdminAnnouncements';
+import AdminCourses from './pages/AdminCourses';
+import AdminEvents from './pages/AdminEvents';
+import AdminProgrammes from './pages/AdminProgrammes';
+import AdminGallery from './pages/AdminGallery';
+import ProtectedRoute from './components/ProtectedRoute';
+
 function App() {
   const [firstVisit, setFirstVisit] = useState(false);
   const [courseModalOpened, { open: openCourseModal, close: closeCourseModal }] = useDisclosure(false);
@@ -36,26 +49,45 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <div className="App bg-[#f9fafc]">
-        <Header />
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/ourmission" element={<OurMission />} />
-          <Route path="/aboutus" element={<AboutUs />} />
-          <Route path="*" element={<ErrorPage />} />
-          <Route path="/programmes" element={<Programmes />} />
-          <Route path="/contactus" element={<Contact />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="event/:id" element={<EventDetails />} />
-          <Route path="/yesjechoes" element={<YesjEchos />} />
-          <Route path="/contribute" element={<Contribute />} />
-          <Route path="/courses" element={<Courses />} />
-          <Route path='/events'  element={<EventPage/>}/>
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
+    <AdminProvider>
+      <Router>
+        <div className="App bg-[#f9fafc]">
+          <Header />
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/ourmission" element={<OurMission />} />
+            <Route path="/aboutus" element={<AboutUs />} />
+            <Route path="*" element={<ErrorPage />} />
+            <Route path="/programmes" element={<Programmes />} />
+            <Route path="/contactus" element={<Contact />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="event/:id" element={<EventDetails />} />
+            <Route path="/yesjechoes" element={<YesjEchos />} />
+            <Route path="/contribute" element={<Contribute />} />
+            <Route path="/courses" element={<Courses />} />
+            <Route path='/events' element={<EventPage />} />
+            
+            {/* Admin Routes */}
+            <Route path="/admin/login" element={<AdminLogin />} />
+            <Route path="/admin" element={
+              <ProtectedRoute>
+                <AdminDashboard />
+              </ProtectedRoute>
+            }>
+              <Route index element={<AdminHome />} />
+              <Route path="dashboard" element={<AdminHome />} />
+              <Route path="carousel" element={<AdminCarousel />} />
+              <Route path="announcements" element={<AdminAnnouncements />} />
+              <Route path="courses" element={<AdminCourses />} />
+              <Route path="events" element={<AdminEvents />} />
+              <Route path="programmes" element={<AdminProgrammes />} />
+              <Route path="gallery" element={<AdminGallery />} />
+            </Route>
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
+    </AdminProvider>
   );
 }
 

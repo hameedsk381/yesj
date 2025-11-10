@@ -1,5 +1,6 @@
 import { IconArrowForward } from '@tabler/icons-react';
 import React, { useEffect, useState } from 'react';
+import { announcementsService } from '../services';
 
 const VerticalScrollingAnnouncement = () => {
   const [announcements, setAnnouncements] = useState([]);
@@ -32,17 +33,12 @@ const VerticalScrollingAnnouncement = () => {
     const fetchAnnouncements = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch('https://api.yesj.in/announcements');
-        if (!response.ok) {
-          // Instead of throwing error, use mock data
-          setAnnouncements(mockAnnouncements);
-          return;
-        }
-        const data = await response.json();
+        setError(null);
+        const data = await announcementsService.getAll();
         setAnnouncements(data.length > 0 ? data : mockAnnouncements);
       } catch (error) {
         console.error('Error fetching announcements:', error);
-        // Use mock data instead of setting error
+        // Use mock data when API call fails
         setAnnouncements(mockAnnouncements);
       } finally {
         setIsLoading(false);
@@ -87,12 +83,12 @@ const VerticalScrollingAnnouncement = () => {
         <div className="hidden md:block">
           <div className="absolute top-0 w-full h-full animate-verticalScroll flex-col space-y-6">
             {announcements.map((announcement, index) => (
-              <AnnouncementCard key={index} announcement={announcement} index={index} />
+              <AnnouncementCard key={announcement._id || announcement.id || index} announcement={announcement} index={index} />
             ))}
           </div>
           <div className="absolute top-[120%] w-full h-full animate-verticalScroll flex-col space-y-6">
             {announcements.map((announcement, index) => (
-              <AnnouncementCard key={index} announcement={announcement} index={index} />
+              <AnnouncementCard key={`dup-${announcement._id || announcement.id || index}`} announcement={announcement} index={index} />
             ))}
           </div>
         </div>
@@ -101,7 +97,7 @@ const VerticalScrollingAnnouncement = () => {
         <div className="md:hidden">
           <div className="absolute top-0 w-full h-full animate-verticalScroll flex-col space-y-6">
             {announcements.map((announcement, index) => (
-              <div key={index} className="text-center px-4 py-2">
+              <div key={announcement._id || announcement.id || index} className="text-center px-4 py-2">
                 <div className="bg-white p-4 rounded-lg shadow-sm">
                   {announcement.isNew && (
                     <span className="inline-block bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded-full mb-2">
@@ -122,7 +118,7 @@ const VerticalScrollingAnnouncement = () => {
           </div>
           <div className="absolute top-[120%] w-full h-full animate-verticalScroll flex-col space-y-6">
             {announcements.map((announcement, index) => (
-              <div key={index} className="text-center px-4 py-2">
+              <div key={`dup-${announcement._id || announcement.id || index}`} className="text-center px-4 py-2">
                 <div className="bg-white p-4 rounded-lg shadow-sm">
                   {announcement.isNew && (
                     <span className="inline-block bg-blue-500 text-white text-xs font-semibold px-2 py-1 rounded-full mb-2">

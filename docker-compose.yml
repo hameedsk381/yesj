@@ -1,8 +1,0 @@
-version: '3'
-
-services:
-  react-app:
-    build: .
-    ports:
-      - "8080:80"   # Maps container port 80 to host port 80
-    container_name: react_app_container

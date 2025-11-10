@@ -1,25 +1,13 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import textbackground from '../assets/text-background.png';
+import { carouselService } from '../services';
 
-// Import images using Vite's import.meta.glob with proper error handling
-const images = import.meta.glob('/public/website/*.{jpg,png,jpeg}', { 
-  eager: true,
-  import: 'default'
-});
-
-// Create slides array with proper type checking and error handling
-const slides = Object.entries(images).map(([path, image]) => {
-  if (!image) {
-    console.warn(`Failed to load image: ${path}`);
-    return null;
-  }
-  return {
-    image,
-    path,
-    alt: path.split('/').pop().split('.')[0] // Generate alt text from filename
-  };
-}).filter(Boolean); // Remove any null entries from failed loads
+// Default images if no slides are available from the API
+const defaultImages = [
+  { image: '/website/IMG_5986.JPG', alt: 'Default slide 1' },
+  { image: '/website/IMG_5999.JPG', alt: 'Default slide 2' },
+  { image: '/website/IMG_6787.JPG', alt: 'Default slide 3' }
+];
 
 const slideVariants = {
   enter: (direction) => ({
@@ -40,6 +28,32 @@ const slideVariants = {
 
 const Carouselslider = () => {
   const [[current, direction], setCurrent] = useState([0, 0]);
+  const [slides, setSlides] = useState(defaultImages);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchSlides = async () => {
+      try {
+        const data = await carouselService.getAll();
+        if (data && data.length > 0) {
+          // Map the API response to the format expected by the component
+          const formattedSlides = data.map(slide => ({
+            image: slide.image || slide.imageUrl,
+            alt: slide.alt || slide.title || 'Carousel slide'
+          }));
+          setSlides(formattedSlides);
+        }
+      } catch (error) {
+        console.error('Error fetching carousel slides:', error);
+        // Use default images if API call fails
+        setSlides(defaultImages);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchSlides();
+  }, []);
 
   useEffect(() => {
     const autoplay = setInterval(() => {
@@ -47,11 +61,29 @@ const Carouselslider = () => {
     }, 5000); // Change slide every 5 seconds
 
     return () => clearInterval(autoplay);
-  }, []);
+  }, [slides.length]);
 
   const paginate = (newDirection) => {
     setCurrent([current + newDirection, newDirection]);
   };
+
+  // Function to determine the correct image source
+  const getImageSource = (imagePath) => {
+    // If it's already a full URL, return as is
+    if (imagePath.startsWith('http')) {
+      return imagePath;
+    }
+    // If it's a local path, prefix with the base URL
+    return imagePath;
+  };
+
+  if (loading) {
+    return (
+      <div className="w-full h-full flex items-center justify-center bg-gray-200">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="w-full h-full overflow-hidden relative">
@@ -72,8 +104,8 @@ const Carouselslider = () => {
               }}
             >
               <img
-                src={slide.image}
-                alt=""
+                src={getImageSource(slide.image)}
+                alt={slide.alt}
                 className="w-full h-full object-fill"
               />
             </motion.div>

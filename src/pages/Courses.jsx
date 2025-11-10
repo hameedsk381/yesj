@@ -1,52 +1,95 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { BadgeCard } from '../components/BadgeCard';
-
-// Updated coursesData to include images for each course
-const coursesData = [
-  {
-    category: 'Technical Courses',
-    courses: [
-      { id: 1, title: 'MERN Full Stack', description: 'Learn to build full-stack applications using MongoDB, Express, React, and Node.js.', pageLink: '/courses/mern-full-stack', image: 'https://yesj.org/assets/p3-822182f8.png', badges: [{ emoji: '📚', label: 'Course' }], duration: '12 weeks' },
-      { id: 2, title: 'IoT Basics', description: 'Introduction to Internet of Things and how to build IoT applications.', pageLink: '/courses/iot-basics', image: 'https://yesj.org/assets/p3-822182f8.png', badges: [{ emoji: '📚', label: 'Course' }], duration: '8 weeks' },
-      { id: 3, title: 'Digital Marketing', description: 'Master the fundamentals of digital marketing strategies.', pageLink: '/courses/digital-marketing', image: 'https://yesj.org/assets/p3-822182f8.png', badges: [{ emoji: '📚', label: 'Course' }], duration: '10 weeks' },
-      { id: 4, title: 'SEO Essentials', description: 'Learn the basics of Search Engine Optimization to improve website visibility.', pageLink: '/courses/seo-essentials', image: 'https://yesj.org/assets/p3-822182f8.png', badges: [{ emoji: '📚', label: 'Course' }], duration: '6 weeks' },
-    ],
-  },
-  {
-    category: 'Non-Technical Courses',
-    courses: [
-      { id: 5, title: 'English Language Basics', description: 'Improve your English language skills for everyday communication.', pageLink: '/courses/english-language', image: 'path/to/english-course-image.jpg', badges: [{ emoji: '📚', label: 'Course' }], duration: '4 weeks' },
-    ],
-  },
-];
+import React, { useEffect, useState } from 'react';
+import { coursesService } from '../services';
 
 const Courses = () => {
-  const navigate = useNavigate();
+  const [courses, setCourses] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  const handleViewCourse = (pageLink) => {
-    navigate(pageLink);
+  useEffect(() => {
+    const fetchCourses = async () => {
+      try {
+        setLoading(true);
+        const data = await coursesService.getAll();
+        setCourses(data);
+      } catch (err) {
+        setError(err.message);
+        console.error('Error fetching courses:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCourses();
+  }, []);
+
+  // Function to determine the correct image source
+  const getImageSource = (imagePath) => {
+    // If it's already a full URL, return as is
+    if (imagePath.startsWith('http')) {
+      return imagePath;
+    }
+    // If it's a local path, prefix with the base URL
+    return imagePath;
   };
 
-  return (
-    <div className="container mx-auto p-12">
-      {coursesData.map((categoryData) => (
-        <div key={categoryData.category} className="mb-6">
-          <h2 className="text-2xl sm:text-3xl font-semibold mb-6 text-gray-800">{categoryData.category}</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            {categoryData.courses.map((course) => (
-              <BadgeCard 
-                key={course.id}
-                image={course.image}
-                title={course.title}
-                description={course.description}
-                badges={course.badges}
-                duration={course.duration}
-              />
-            ))}
-          </div>
+  if (loading) {
+    return (
+      <div className="container mx-auto p-8 flex justify-center items-center h-64">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="container mx-auto p-8">
+        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+          <strong className="font-bold">Error: </strong>
+          <span className="block sm:inline">{error}</span>
         </div>
-      ))}
+      </div>
+    );
+  }
+
+  return (
+    <div className="container mx-auto p-8">
+      <h1 className="text-3xl font-bold text-gray-900 mb-8">Our Courses</h1>
+      {courses.length === 0 ? (
+        <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+          <h3 className="text-2xl font-semibold text-gray-700">No Courses Available</h3>
+          <p className="text-gray-600 mt-2">Check back later for new courses.</p>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {courses.map((course) => (
+            <div key={course._id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+              <img 
+                src={getImageSource(course.image)} 
+                alt={course.title} 
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-6">
+                <h2 className="text-xl font-bold text-gray-900 mb-2">{course.title}</h2>
+                <p className="text-gray-700 mb-4">{course.description}</p>
+                <div className="flex justify-between items-center">
+                  <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">
+                    {course.category || 'General'}
+                  </span>
+                  <span className="text-gray-600 text-sm">
+                    Duration: {course.duration || 'Not specified'}
+                  </span>
+                </div>
+                {course.instructor && (
+                  <p className="mt-3 text-gray-600">
+                    <strong>Instructor:</strong> {course.instructor}
+                  </p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
